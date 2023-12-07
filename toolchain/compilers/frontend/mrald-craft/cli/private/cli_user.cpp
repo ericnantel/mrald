@@ -75,7 +75,7 @@ namespace Mrald
 						buildType = BuildType::Module;
 					}
 
-					const auto& buildConfigParam = args.At(buildStart + 3U);
+					const auto& buildConfigParam = args.At(buildStart + 2U);
 					if (buildConfigParam == "dev" || buildConfigParam == "development")
 					{
 						buildConfig = BuildConfig::Development;
@@ -85,7 +85,7 @@ namespace Mrald
 						buildConfig = BuildConfig::Production;
 					}
 
-					const auto& filePathParam = args.At(buildStart + 2U);
+					const auto& filePathParam = args.At(buildStart + 3U);
 
 					if (buildType != BuildType::None)
 					{
