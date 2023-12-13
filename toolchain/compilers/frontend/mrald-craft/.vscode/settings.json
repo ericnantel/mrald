@@ -1,0 +1,15 @@
+{
+	"search.exclude": {
+		"**/bin": true,
+		"**/lib": true,
+		"**/out": true,
+		"**/build": true,
+	},
+	"files.exclude": {
+		"**/bin": true,
+		"**/lib": true,
+		"**/out": true,
+		"**/build": true,
+		"**/.vs": true,
+	}
+}
