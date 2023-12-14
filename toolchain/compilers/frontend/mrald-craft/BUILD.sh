@@ -1,5 +1,7 @@
 #!/bin/sh
 
+os=$(uname -o)
+
 #echo 
 #echo +===============================+
 #echo + Cleaning Mrald-Craft.. ++++++++
@@ -28,7 +30,11 @@ echo + Testing Mrald-Craft CLI.. +++++
 echo +===============================+
 echo 
 
-./bin/Debug/mrald_craft_cli.exe
+if [[ "$os" == 'Msys' ]]; then
+	./bin/Debug/mrald_craft_cli.exe
+else
+	./bin/mrald_craft_cli
+fi
 
 cd ../..
 
@@ -50,7 +56,11 @@ echo + Testing Mrald-Craft Parser.. ++
 echo +===============================+
 echo 
 
-./bin/Debug/mrald_craft_parser.exe
+if [[ "$os" == 'Msys' ]]; then
+	./bin/Debug/mrald_craft_parser.exe
+else
+	./bin/mrald_craft_parser
+fi
 
 cd ../..
 
@@ -72,7 +82,11 @@ echo + Testing Mrald-Craft Scanner.. +
 echo +===============================+
 echo 
 
-./bin/Debug/mrald_craft_scanner.exe
+if [[ "$os" == 'Msys' ]]; then
+	./bin/Debug/mrald_craft_scanner.exe
+else
+	./bin/mrald_craft_scanner
+fi
 
 cd ../..
 
