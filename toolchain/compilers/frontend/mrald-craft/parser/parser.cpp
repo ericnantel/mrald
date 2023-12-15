@@ -14,8 +14,8 @@ namespace Mrald
 		{
 			std::cout << "Started Mrald-Craft Parser..." << std::endl;
 
-			LexerMode mode = LexerMode::Parse;
-			Lexer(mode);
+			Lexer::LoadMode mode = Lexer::LoadMode::Parse;
+			Lexer::Load(mode);
 
 			//Parser needs to form blocks, constants and modules
 			//Needs to output IR Files (.ll) and some Meta Files

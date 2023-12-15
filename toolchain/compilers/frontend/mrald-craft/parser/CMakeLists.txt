@@ -8,7 +8,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 #including directories
 include_directories(
 	../license
-	../lexer)
+	../lexer/public
+	../lexer/private)
 
 
 set(LICENSE_HEADER_FILES
@@ -19,10 +20,21 @@ set(LICENSE_SOURCE_FILES
 )
 
 set(LEXER_HEADER_FILES
-	../lexer/lexer.hpp
+	../lexer/public/lexer.hpp
+	../lexer/public/lexer_load_mode.hpp
+	../lexer/public/lexer_token.hpp
+	../lexer/public/lexer_token_class.hpp
+	../lexer/public/lexer_token_class_comment.hpp
+	../lexer/public/lexer_token_class_keyword.hpp
+	../lexer/public/lexer_token_class_link.hpp
+	../lexer/public/lexer_token_class_number.hpp
+	../lexer/public/lexer_token_class_symbol.hpp
+	../lexer/public/lexer_token_class_word.hpp
+	../lexer/public/lexer_token_col.hpp
+	../lexer/public/lexer_token_loc.hpp
 )
 set(LEXER_SOURCE_FILES
-	../lexer/lexer.cpp
+	../lexer/private/lexer.cpp
 )
 
 #setting library name suffix
