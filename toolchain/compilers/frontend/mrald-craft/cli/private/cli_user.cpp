@@ -20,7 +20,7 @@ namespace Mrald
 
 				int langStart = -1;
 				int buildStart = -1;
-				
+
 				const auto paramSize = args.Size() - 1U;
 				for (auto paramIndex = 0U; paramIndex < paramSize; ++paramIndex)
 				{

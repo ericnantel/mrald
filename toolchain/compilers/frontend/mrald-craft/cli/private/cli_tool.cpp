@@ -12,6 +12,8 @@ namespace Mrald
 				Tool tool;
 				tool.cmd = Cmd::Unknown;
 				tool.cmdStart = -1;
+				tool.cmdHelp = false;
+				tool.cmdVerbose = false;
 
 				if (args.Size() > 256U)
 				{
@@ -31,7 +33,16 @@ namespace Mrald
 						tool.cmd = Cmd::Build;
 						tool.cmdStart = paramIndex + 1U;
 					}
-					
+
+					if (param == "-h" || param == "--help")
+					{
+						tool.cmdHelp = true;
+					}
+
+					if (param == "-v" || param == "--verbose")
+					{
+						tool.cmdVerbose = true;
+					}
 				}
 
 				return tool;
@@ -41,6 +52,11 @@ namespace Mrald
 			{
 				if (tool.cmd == Cmd::Unknown)
 				{
+				}
+
+				if (tool.cmd == Cmd::Lang)
+				{
+					//
 				}
 
 				if (tool.cmd == Cmd::Build)
