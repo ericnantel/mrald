@@ -15,6 +15,8 @@ namespace Mrald
 			{
 				Cmd cmd;
 				int cmdStart;
+				bool cmdHelp;
+				bool cmdVerbose;
 			};
 
 			Tool ParseTool(const Args& args);
