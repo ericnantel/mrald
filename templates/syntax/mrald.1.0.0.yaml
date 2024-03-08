@@ -1,0 +1,85 @@
+
+filetype: mrald
+
+detect:
+    filename: "\\.mrald$"
+
+rules:
+    - identifier: "\\b[A-Z_][0-9A-Z_]+\\b"
+
+    # Primitives
+    - type: "\\b(char|byte|short|ushort|int|uint|long|ulong|boolean|float|double)\\b"
+    - type: "\\b(int8|uint8|int16|uint16|int32|uint32|int64|uint64|f32|f64)\\b"
+    #- type: "\\b(half|f16|pointer)\\b"
+
+    - preproc: ""
+
+    # Builtin functions
+    - special: "\\b(main|constructor|destructor|operator)\\b"
+    
+    # Reserved words
+    - statement: "\\b(constant|parent|with|param|readonly|copy)\\b"
+    - statement: "\\b(import|export)\\b"
+    - statement: "\\b(data|class|func)\\b"
+    #- statement: "\\b(enum)\\b"
+    - statement: "\\b(for|while|repeat|if|else)\\b"
+    #- statement: "\\b(when)\\b"
+    - statement: "\\b(return|continue|break)\\b"
+    #- statement: "\\b(goto|switch|case|default)\\b"
+    - statement: "\\b(end)\\b"
+
+    # Primitives
+    - type: "\\b()\\b"
+    - type: "\\b()\\b"
+    
+    # Operators 
+    - symbol.operator: "[-+*/%!=<>]"
+    - symbol.operator: "[.]|\\b(as)\\b"
+    - symbol.operator: "[&|~^]"
+    #- symbol.operator: "[@#$:]"
+    
+    # Square Brackets
+    - symbol.brackets: "\\[|\\]"
+    #- symbol.brackets: "[(){}]"
+    
+    # Constants
+    - constant: "\\b(null)\\b"
+    - constant.number: "\\b(0b[01_]+|0o[0-7_]+|[0-9_]+|0x[a-fA-F0-9_]+)\\b"
+    - constant.bool: "\\b(true|false)\\b"
+    
+    # Strings
+    - constant.string:
+        start: "\""
+        end: "\""
+        skip: "\\\\."
+        rules:
+            - constant.specialChar: ""
+    - constant.string:
+        start: "'"
+        end: "'"
+        skip: "\\\\."
+        rules:
+            - error: "..+"
+            - constant.specialChar: ""
+            
+    # Comments
+    - comment:
+        start: ";"
+        end: "$"
+        rules:
+            - todo: "(TODO):?"
+    - comment:
+        start: "**"
+        end: "$"
+        rules:
+            - todo: "(TODO):?"
+    - comment:
+        start: "@@"
+        end: "$"
+        rules:
+            - todo: "(TODO):?"
+    - comment:
+        start: "##"
+        end: "$"
+        rules:
+            - todo: "(TODO):?"
