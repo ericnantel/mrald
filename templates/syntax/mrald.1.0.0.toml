@@ -1,0 +1,28 @@
+
+[[language]]
+name = "mrald"
+language-id = "mrald"
+scope = "source.mrald"
+injection-regex = "mrald"
+file-types = ["mrald"]
+#shebangs
+#roots
+auto-format = false
+#diagnostic-severity
+comment-token = ";"
+indent = {tab-width = 2, unit = "  "}
+language-servers = ["mrald-lsp"]
+#grammar
+#formatter
+#text-width
+#workspace-lsp-roots
+
+[language-server.mrald-lsp]
+command = "mrald-lsp-latest"
+args = []
+config = {provideFormatter = false}
+environment = {}
+
+#[language-server.mrald-lsp.config]
+#documentFormatting = false
+#languages = {mrald = [{formatCommand = "TODO", formatStdin = true}]}
