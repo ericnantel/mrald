@@ -14,6 +14,7 @@ namespace Mrald
 				Keyword,
 				Symbol,
 				Number,
+				NumberSign,
 				Word,
 				Link,
 				Comment

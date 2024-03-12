@@ -6,6 +6,7 @@
 #include "lexer_token_class_keyword.hpp"
 #include "lexer_token_class_symbol.hpp"
 #include "lexer_token_class_number.hpp"
+#include "lexer_token_class_number_sign.hpp"
 #include "lexer_token_class_word.hpp"
 #include "lexer_token_class_link.hpp"
 #include "lexer_token_class_comment.hpp"
@@ -24,6 +25,7 @@ namespace Mrald
 				TokenClassKeyword klassKeyword;
 				TokenClassSymbol klassSymbol;
 				TokenClassNumber klassNumber;
+				TokenClassNumberSign klassNumberSign;
 				TokenClassWord klassWord;
 				TokenClassLink klassLink;
 				TokenClassComment klassComment;

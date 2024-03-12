@@ -28,6 +28,7 @@ set(LEXER_HEADER_FILES
 	../lexer/public/lexer_token_class_keyword.hpp
 	../lexer/public/lexer_token_class_link.hpp
 	../lexer/public/lexer_token_class_number.hpp
+	../lexer/public/lexer_token_class_number_sign.hpp
 	../lexer/public/lexer_token_class_symbol.hpp
 	../lexer/public/lexer_token_class_word.hpp
 	../lexer/public/lexer_token_col.hpp

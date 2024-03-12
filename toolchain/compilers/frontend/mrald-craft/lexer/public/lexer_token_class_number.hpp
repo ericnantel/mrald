@@ -11,19 +11,11 @@ namespace Mrald
 			enum class TokenClassNumber
 			{
 				Unknown = 0,
-				SignedChar,
-				UnsignedChar,
-				SignedShort,
-				UnsignedShort,
-				SignedInteger,
-				UnsignedInteger,
-				SignedLong,
-				UnsignedLong,
-				HalfFloat,
-				SingleFloat,
-				DoubleFloat,
-				PositiveInfinity,
-				NegativeInfinity
+				Zero,
+				Integer,
+				Decimal,
+				Scientific,
+				Infinity
 			};
 		};
 	};
