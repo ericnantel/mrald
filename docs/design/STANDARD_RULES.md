@@ -247,4 +247,4 @@ This feature is not yet available; however the intend is to allow modules from o
     export extern C class StdCppThread
 ```
 
-**_Copyright 2023 Eric Nantel_**
+*Copyright (c) 2024 Eric Nantel*
