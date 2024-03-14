@@ -1,5 +1,5 @@
 
-# Getting Started <a name="top"></a>
+# Getting Started
 
 + 💻 **Installation** [Win]() | [Mac]() | [GNU Linux]()
 + 📖 **Documentation** [EN](/docs/v1.0.0/en/toc-en.md) | [FR](/docs/v1.0.0/fr/toc-fr.md)

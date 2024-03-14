@@ -7,6 +7,6 @@
 0. [Foreword](/docs/v1.0.0/en/preface-en.md)
 
 [Back to README](/docs/README.md)
-[Top](#top)
+[Top](#table-of-contents)
 
 *Copyright (c) 2024 Eric Nantel*

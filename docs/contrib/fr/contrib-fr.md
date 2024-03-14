@@ -1,7 +1,7 @@
 
-## Contribution <a name="top"></a>
+## Contribution
 
 [Retour vers README](/docs/README.md)
-[Haut](#top)
+[Haut](#contribution)
 
 *Copyright (c) 2024 Eric Nantel*
