@@ -1,11 +1,10 @@
 
-## Catalog <a name="top"></a>
+## Catalog
 
-##### All Release Notes <a name="all-release-notes">
+##### All Release Notes
 *06/23/2024* [Version 1.0.0 (Quarks)](/docs/v1.0.0/en/release-notes-en.md)
-</a>
 
 [Back to README](/docs/README.md)
-[Top](#top)
+[Top](#catalog)
 
 *Copyright (c) 2024 Eric Nantel*

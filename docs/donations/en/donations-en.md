@@ -2,6 +2,6 @@
 ## Donations <a name="top"></a>
 
 [Back to README](/docs/README.md)
-[Top](#top)
+[Top](#donations)
 
 *Copyright (c) 2024 Eric Nantel*

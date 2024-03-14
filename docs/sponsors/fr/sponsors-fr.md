@@ -1,5 +1,5 @@
 
-## Commandites <a name="top"></a>
+## Commandites
 
 L'Open-Source tel que le FOSS(Free Open-Source Software) est devenu ces dernières décennies un incontournable investissement pour de nombreuses entreprises et organisations désirant offrir de meilleurs produits et services. Nous avons tous déjà utilisé de la technologie Open-Source sans le savoir forcément. Ce qui prouve de la nécessité d'investir davantage. Les usagers peuvent généralement, de nos jours, compter sur des alternatives relativement peu couteuses, voire gratuites, lorsqu'un tel service ou telle application devient inutilisable, payante ou limitée. Parfois, c'est une question de transparence qui pousse les usagers à regarder ailleurs.
 
@@ -25,6 +25,6 @@ Lien(s) rapide(s):
 * [Commanditaires](https://github.com/sponsors/ericnantel)
 
 [Retour vers README](/docs/README.md)
-[Haut](#top)
+[Haut](#commandites)
 
 *Copyright (c) 2024 Eric Nantel*

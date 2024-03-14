@@ -1,5 +1,5 @@
 
-## Sponsorship <a name="top"></a>
+## Sponsorship
 
 Open source such as FOSS (Free Open-Source Software) has become an essential investment in recent decades for many companies and organizations wishing to offer better products and services. We've all used open-source technology without necessarily knowing it. This proves the need for more investment. Nowadays, users can usually rely on relatively inexpensive or even free alternatives when such a service or application becomes unusable, paid for or limited. Sometimes, it's a question of transparency that pushes users to look elsewhere.
 
@@ -25,6 +25,6 @@ Quick Link(s):
 * [Sponsors](https://github.com/sponsors/ericnantel)
 
 [Back to README](/docs/README.md)
-[Top](#top)
+[Top](#sponsorship)
 
 *Copyright (c) 2024 Eric Nantel*

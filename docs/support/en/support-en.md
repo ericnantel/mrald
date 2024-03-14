@@ -1,6 +1,6 @@
-## Support <a name="top"></a>
+## Support
 
 [Back to README](/docs/README.md)
-[Top](#top)
+[Top](#support)
 
 *Copyright (c) 2024 Eric Nantel*
