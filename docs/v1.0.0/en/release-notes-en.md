@@ -3,13 +3,15 @@
 
 ## Release Notes <a name="top"></a>
 *Version 1.0.0 (Codename: Quarks)*
-*Date: -*
+*Date: 06/23/2024*
 
 ### New Features
 ### Improvements
 ### Changes
 ### Fixes
 ### Known Issues
+
+[See older Release Notes](/docs/catalog/en/catalog-en.md#all-release-notes)
 
 [Back to Table of Contents](/docs/v1.0.0/en/toc-en.md)
 [Top](#top)

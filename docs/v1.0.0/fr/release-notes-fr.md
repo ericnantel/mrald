@@ -3,13 +3,15 @@
 
 ## Notes de Publication <a name="top"></a>
 *Version 1.0.0 (Nom de code: Quarks)*
-*Date: -*
+*Date: 23/06/2024*
 
 ### Nouveautés
 ### Améliorations
 ### Changements
 ### Réparations
 ### Problèmes non résolus
+
+[Voir anciennes Notes de Publication](/docs/catalog/fr/catalog-fr.md#toutes-les-notes-de-publication)
 
 [Retour vers Table des Matières](/docs/v1.0.0/fr/toc-fr.md)
 [Haut](#top)
