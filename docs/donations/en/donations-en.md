@@ -1,5 +1,5 @@
 
-## Donations <a name="top"></a>
+## Donations
 
 [Back to README](/docs/README.md)
 [Top](#donations)
