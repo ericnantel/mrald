@@ -1,8 +1,8 @@
-## 0. Préface
+## 9. Glossaire
 
-| [Suivant](/docs/v1.0.0/fr/hello-world-fr.md)
+[Précédent](/docs/v1.0.0/fr/learn-by-coding-fr.md)
 
 [Retour vers Table des Matières](/docs/v1.0.0/fr/toc-fr.md)
-[Haut](#0-préface)
+[Haut](#9-glossaire)
 
 *Copyright (c) 2024 Eric Nantel*

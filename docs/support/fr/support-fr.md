@@ -1,5 +1,5 @@
 
-## Support <a name="top"></a>
+## Support
 
 [Retour vers README](/docs/README.md)
 [Haut](#support)
