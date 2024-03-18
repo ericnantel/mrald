@@ -1,11 +1,11 @@
 
 ## Commandites
 
-L'Open-Source tel que le FOSS(Free Open-Source Software) est devenu ces dernières décennies un incontournable investissement pour de nombreuses entreprises et organisations désirant offrir de meilleurs produits et services. Nous avons tous déjà utilisé de la technologie Open-Source sans le savoir forcément. Ce qui prouve de la nécessité d'investir davantage. Les usagers peuvent généralement, de nos jours, compter sur des alternatives relativement peu couteuses, voire gratuites, lorsqu'un tel service ou telle application devient inutilisable, payante ou limitée. Parfois, c'est une question de transparence qui pousse les usagers à regarder ailleurs.
+L'Open-Source tel que le FOSS(Free Open-Source Software) est devenu ces dernières décennies un incontournable investissement pour de nombreuses entreprises et organisations désirant offrir de meilleurs produits et services. Nous avons tous déjà utilisé de la technologie Free Open-Source sans le savoir forcément. Ce qui prouve de la nécessité d'investir davantage dans de tels projets.
 
-Investir chez nous, avec du soutien financier, matériel ou digital, demeure une option très viable pour quiconque cherchant à offrir plus d'accessibilité ou désirant promouvoir davantage la connaissance et aussi leur(s) produit(s) ou service(s) au sein de la communauté grandissante de l'Open-Source. De notre côté, nous nous assurons de demeurer ouverts à toute proposition, respectueuse et conforme; responsables; et transparents dans nos dépenses.
+Le project Mrald (un language de programmation Free Open-Source) ne peut subsister sans le moindre fonds à perpétuité. Bien que des gens passionnés et expérimentés contribuent au projet, il en demeure pas moins que certains coûts soient liés au maintient de celui-ci. Des coupures de services pourraient grandement nuir au succès, mais aussi bloquer l'accès à l'innovation. Investir chez nous c'est offrir plus d'accessibilité et promouvoir davantage la connaissance des nouvelles technologies. C'est aussi une stratégie viable et gagnante pour obtenir plus de visibilité auprès de la communauté grandissante du Free Open-Source pour vos produits et services. Nous vous encourageons d'ailleurs à utiliser notre projet ou à nous aider à le distribuer librement, tout en respectant notre license.
 
-Nous n'avons pas de commanditaires idéaux, vous avez tous le pouvoir de changer le futur de l'Open-Source, mais voici quand même un liste non exhaustive de commanditaires à qui cela pourrait intéresser:
+Nous n'avons pas de commanditaires idéaux, mais voici quand même un liste non exhaustive de commanditaires à qui cela pourrait intéresser:
 * Offrant un service d'hébergement en ligne (info-nuages, sites web, serveurs)
 * Offrant un produit digital, téléchargeable ou SaaS (anti-virus, outils de développement, jeux vidéos)
 * Offrant des ordinateurs de bureau, portable, appareils mobiles ou consoles
@@ -17,12 +17,24 @@ Nous n'avons pas de commanditaires idéaux, vous avez tous le pouvoir de changer
 * Offrant des services de réparation ou petits marchants de ventes d'appareils électroniques neufs ou usagés
 * Offrant du contenu divertissant ou éducatif sur les réseaux sociaux (chaîne YT, programmation)
 * Enseignant la programmation dans un établissement reconnu ou sur une plateforme éducative en ligne
-* Enthousiastes utilisateurs d'Open-Source
+* Enthousiastes utilisateurs de Free Open-Source
 
-*Veuillez nous écrire avant de vous engager comme commanditaire, pour obtenir un préqualification de notre part, basée sur les renseignements que vous nous aurez fourni; bien que quiconque respectant les critères de commanditaire de la plateforme GitHub puisse faire une commandite, nous nous réservons, en tout temps, le droit de refuser toute offre ou proposition. Notez que nous ferons des recherches si la commandite va plus loin qu'un simple soutien sans attente de retour, avant de vous donner notre verdict. Cela pourrait prendre jusqu'à plusieurs jours pour vous répondre. Il est essentiel que nous fassions ainsi pour se protéger, nous et la communauté Open-Source de toute mauvaise intention ou influence de certaines personnes, entités ou industries.*
+Si vous vous êtes reconnus, nous vous invitons à rejoindre notre liste de commanditaires en cliquant sur le lien suivant:
+- Nos [Commanditaires](https://github.com/sponsors/ericnantel)
 
-Lien(s) rapide(s):
-* [Commanditaires](https://github.com/sponsors/ericnantel)
+De la part de nous tous, un grand merci pour votre soutien.
+Votre contribution sera un pas de l'avant pour l'accessibilité.
+
+Vous pouvez aussi nous écrire à l'addresse électronique suivante mrald@duck.com pour obtenir une préqualification, dans un délai raisonnable, en fournissant les informations suivantes:
+- Nom de l'entreprise ou organisation
+- Nom du responsable du soutien
+- Addresse électronique du responsable
+- Domaine d'activité
+- Type d'offre suggérée
+
+En envoyant un courriel à l'addresse mentionnée ci-haut, vous avez lu et accepté notre [Politique de Confidentialité]().
+
+*Veuillez prendre note que nous n'accepterons aucun comportement jugé douteux ou innaceptable et bloquerons tout courriel qui enfrain notre [Politique de Communication]().*
 
 [Retour vers README](/docs/README.md)
 [Haut](#commandites)
