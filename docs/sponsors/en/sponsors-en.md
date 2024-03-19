@@ -22,15 +22,27 @@ We don't have ideal sponsors, but here is a non-exhaustive list of sponsors who 
 If you recognize yourself, we invite you to join our list of sponsors by clicking on the following link:
 - Our [Sponsors](https://github.com/sponsors/ericnantel)
 
-On behalf of all of us, thank you so much for your support.
-Your contribution will be a step forward accessibility.
+**On behalf of all of us, thank you so much for your support.
+Your contribution will be a step forward accessibility.**
 
-You can also write to us at the following email address mrald@duck.com to obtain a prequalification, within a reasonable period of time, providing the following information:
-- Name of the company or organization
-- Name of the support manager
-- E-mail address of the support manager
-- Field of activity
-- Suggested Offer Type
+You can also write to us by copying this form and filling in the required empty fields (*):
+```
+    Are you asking a prequalification ? *   : Yes [ ] No [ ]
+    Name of the company or organization *   : _______________________
+    Field of activity *                     : _______________________
+    Business number                         : _______________________
+    Name of the support manager *           : _______________________
+    E-mail address of the support manager * : ____________@______.___
+    Language to communicate *               : En [ ] Fr [ ]
+    Suggested Offer Type *                  : _______________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+```
+To the following e-mail address: mrald@duck.com
 
 By sending an e-mail to the address mentioned above, you have read and agree to our [Privacy Policy]().
 
@@ -38,5 +50,7 @@ By sending an e-mail to the address mentioned above, you have read and agree to 
 
 [Back to README](/docs/README.md)
 [Top](#sponsorship)
+
+*Version [Française](/docs/sponsors/fr/sponsors-fr.md#commandites) disponible*
 
 *Copyright (c) 2024 Eric Nantel*
