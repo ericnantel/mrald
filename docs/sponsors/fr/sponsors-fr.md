@@ -22,15 +22,27 @@ Nous n'avons pas de commanditaires idéaux, mais voici quand même un liste non 
 Si vous vous êtes reconnus, nous vous invitons à rejoindre notre liste de commanditaires en cliquant sur le lien suivant:
 - Nos [Commanditaires](https://github.com/sponsors/ericnantel)
 
-De la part de nous tous, un grand merci pour votre soutien.
-Votre contribution sera un pas de l'avant pour l'accessibilité.
+**De la part de nous tous, un grand merci pour votre soutien.
+Votre contribution sera un pas de l'avant pour l'accessibilité.**
 
-Vous pouvez aussi nous écrire à l'addresse électronique suivante mrald@duck.com pour obtenir une préqualification, dans un délai raisonnable, en fournissant les informations suivantes:
-- Nom de l'entreprise ou organisation
-- Nom du responsable du soutien
-- Addresse électronique du responsable
-- Domaine d'activité
-- Type d'offre suggérée
+Vous pouvez aussi nous écrire en copiant ce formulaire et remplissant les champs vides obligatoires (*):
+```
+    Demandez-vous une préqualification ? *  : Oui [ ] Non [ ]
+    Nom de l'entreprise ou organisation *   : _______________________
+    Secteur d'activité *                    : _______________________
+    Numéro d'entreprise (BN/NEQ)            : _______________________
+    Nom du responsable du soutien *         : _______________________
+    Courriel du responsable *               : ____________@______.___
+    Langue pour communiquer *               : Fr [ ] En [ ]
+    Type d'offre suggérée *                 : _______________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+    _________________________________________________________________
+```
+À l'adresse suivante: mrald@duck.com
 
 En envoyant un courriel à l'addresse mentionnée ci-haut, vous avez lu et accepté notre [Politique de Confidentialité]().
 
@@ -38,5 +50,7 @@ En envoyant un courriel à l'addresse mentionnée ci-haut, vous avez lu et accep
 
 [Retour vers README](/docs/README.md)
 [Haut](#commandites)
+
+*Available [English](/docs/sponsors/en/sponsors-en.md#sponsorship) version*
 
 *Copyright (c) 2024 Eric Nantel*
