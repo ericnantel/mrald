@@ -8,6 +8,9 @@
 1.0.1.1.2. [Les flottantes](#10112-les-flottantes)
 1.0.1.1.3. [Les binaires](#10113-les-binaires)
 1.0.1.2. [Les types personnalisés](#1012-les-types-personnalisés)
+1.0.1.2.1. [Les données](#10121-les-données)
+1.0.1.2.2. [Les énumérations](#10122-les-énumérations)
+1.0.1.2.3. [Les classes](#10123-les-classes)
 1.0.2. [La taille d'une variable](#102-la-taille-dune-variable)
 1.0.3. [Le nom ou alias d'une variable](#103-le-nom-ou-alias-dune-variable)
 1.0.4. [La durée de vie d'une variable](#104-la-durée-de-vie-dune-variable)
@@ -23,7 +26,7 @@ Toutes variables possèdent les propriétés fondamentales suivantes:
 - Une taille
 - Un nom ou alias
 - Une durée de vie
-- Une information
+- De l'information
 - Un accès lecture
 - Un accès écriture
 - Une addresse
@@ -119,14 +122,94 @@ Voici un tableau comparatif des valeurs représentées par les types binaires:
 |   boolean |   Non     |   true, false         |
 
 #### 1.0.1.2. Les types personnalisés
-Les types personnalisés:
-- data
-- enum ou group
-- class
+Les types personnalisés sont aussi appelés des 'types définis par les usagers'. Lorsque vous devez utiliser une variable qui ne peut être représenté par un type primitif, il est recommandé d'utiliser un type personnalisé existant ou d'en créer un nouveau. Le standard du language de programmation Mrald permet leur création grâce aux modèles suivants:
+- Les données
+- Les énumérations
+- Les classes
 
-data -> fields (always visible)
-class -> members (depends private/public or protected)
-TODO..
+#### 1.0.1.2.1. Les données
+Reprenant notre exemple des 'boîtes', imaginez que vous collez plusieurs de ces petites 'boîtes' ensemble pour ne former qu'un seul 'meuble de rangement'. L'avantage d'avoir regroupé ces 'boîtes' c'est que vous pouvez créer des variables qui peuvent contenir plus d'information.
+
+Dorénavant les 'boîtes' que vous avez mises ensemble seront nommées des 'champs' dans votre nouveau type de données. Il est primordial que vous comprenez que nous n'avons pas créé une plus grosse 'boîte', mais plutôt un 'espace de rangement' pour ces 'boîtes' que l'on appèlera des 'champs'.
+
+Points très importants:
+- Un type de données ne comporte **que** des 'champs'
+- Les 'champs' sont tous publiquement accessibles
+- Les 'champs' sont tous mutables*
+- Il faut accéder aux 'champs' pour lire ou conserver l'information
+- La 'disposition' de ses 'champs' est fixe
+- Il est impossible de remplacer ses 'champs'
+- Il est impossible de spécifier un 'niveau d'accès' à un 'champs'
+- Il est impossible de spécifier une 'mutabilité' à un 'champs'
+- Vous ne pouvez **pas** utiliser de *classe* comme type de 'champs'
+- Il est permis d'utiliser des types primitifs, données**, énumérations comme type de 'champs'
+
+*Les 'champs' d'un type de données ne peuvent pas être *non-mutable*. Seuls les variables, ou *'membres d'une classe'*, ont cette propriété.
+
+**Sous les conditions suivantes:
+- Les types de données valides pour des 'champs' doivent être **différents** des types de données définis
+- Les types de données valides pour des 'champs' ne doivent **pas** comporter  de 'champs' de données à leur tour
+
+À retenir, le mot clé **data** que nous verrons plus tard comment utiliser.
+
+#### 1.0.1.2.2. Les énumérations
+Une énumération est un type personnalisé d'une intégrale, qui contrairement à un type primitif, ne peut que prendre certaines valeurs entières fixes et prédéfinies.
+
+Les énumérations sont souvent utilisées pour représenter des 'états' ou pour faire des manipulations de 'bits'.
+
+Points importants:
+- Les valeurs peuvent être assignées par l'usager avec des constantes; sinon le compilateur s'en occupera
+- Le type d'intégrale est automatiquement déduit par le compilateur
+
+À retenir, le mot clé **enum** que nous verrons plus tard comment utiliser.
+
+#### 1.0.1.2.3. Les classes
+Les classes sont comme un dessin industriel pour une voiture. Sur le dessin, on spécifie combien il y aura de roues, de sièges, mais le dessin vous dira aussi si le véhicule peut se déplacer, stopper, ou perdre du carburant lorsqu'il se déplace à une certaine vitesse. Eh bien, c'est ça une classe. Lorsque vous créez une variable de type classe, elle possédera tous les **'atouts'** que la classe lui fournira, mais **pas tous** seront **accessibles**.
+
+Les variables des classes s'appèlent des **'objets'**.
+
+La définition formelle d'un objet selon le standard du language de programmation Mrald est la suivante:
+- *L'objet est l'instance d'une classe*
+
+Les classes ont des 'membres'.*
+Ces 'membres' sont divisés en 2 catégories:
+- Les attributs
+- Les méthodes
+
+**Tous** les membres possèdent un 'niveau d'accès'.
+Par **défaut**, la classe donne un 'niveau d'accès' **privé** à tous ses membres.
+Il existe 3 'niveaux d'accès' parmi lesquels une classe peut assigner à chacun de ses membres:
+- Accès privé
+- Accès protégé
+- Accès publique
+
+Les 'membres attributs' ne sont pas tous 'mutables'.*
+Par **défaut**, les 'membres attributs' sont **mutables**.
+Pour qu'un 'membre attribut' soit *non-mutable* vous devez utilisez le mot clé **readonly**.
+
+Points très importants:
+- Il est impossible de modifier ses 'membres méthodes'
+- Il est impossible de modifier le 'niveau d'accès' des membres d'une classe
+- Il est impossible de modifier la 'mutabilité' des 'membres attributs' d'une classe
+- Tout 'membre attribut' non-mutable doit explicitement être initialisé (dans chacun des contructeurs de la classe)*
+
+Pour y voir plus clair avec les 'niveaux d'accès' et la mutabilité des 'membres attributs', voici un petit exemple:
+- Vous avez une maison, c'est un objet qui a été contruit par une architecte. Celle-ci comporte 3 chambres chacune avec porte et code d'accès. La première chambre est pour invité et le code d'accès est publiquement affiché sur la porte. La deuxième chambre est vous et à votre mère et vous seuls avez son code d'accès. La troisième chambre est à vous, il n'y a que vous qui connaissez le code pour y entrer et il vous est interdit de le partager.
+- Dans la deuxième chambre, il y a des meubles mais selon les plans de l'architecte, il est impossible de les déplacer dans la pièce. Heureusement, dans la troisième chambre, à vous, vous pouvez ajouter des meubles comme bon vous souhaite. Mais peut importe si vous pouviez apporter des changements dans votre chambre, votre mère ne pourra jamais y accéder, puisque c'est écrit ainsi dans les plans de l'architecte. Et personne ne peut changer les plans.
+- Voyons si vous avez compris ceci:
+    - Les plans de l'architecte sont la classe
+    - La maison est l'objet de la classe
+    - Les chambres sont les membres attributs
+    - Les portes et codes d'accès sont les 'niveaux d'accès'
+    - Les meubles dans les chambres sont des valeurs
+        - Les meubles ne peuvent changer dans la deuxième chambre parce qu'ils sont non-mutables
+        - Les meubles dans la troisième chambre sont mutables par défaut
+
+Nous avons un peu effleuré les concepts d'***objet***, d'***encapsulation*** et d'***héritage***, mais nous en reparlerons, plus en détail, dans un autre chapitre réservé, ainsi que du ***polymorphisme***.
+
+*Ne vous inquiétez pas si vous ne comprenez pas tout. Ce n'est après tout que le premier chapitre. :)
+
+À retenir, le mot clé **class** que nous verrons plus tard comment utiliser.
 
 #### 1.0.2. La taille d'une variable
 
