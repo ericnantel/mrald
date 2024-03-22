@@ -13,6 +13,14 @@
         - 1.0.1.2.2. [Les énumérations](#10122-les-énumérations)
         - 1.0.1.2.3. [Les classes](#10123-les-classes)
 - 1.0.2. [La taille d'une variable](#102-la-taille-dune-variable)
+    - 1.0.2.1. [La taille des types primitifs](#1021-la-taille-des-types-primitifs)
+        - 1.0.2.1.1. [La taille des intégrales](#10211-la-taille-des-intégrales)
+        - 1.0.2.1.2. [La taille des flottantes](#10212-la-taille-des-flottantes)
+        - 1.0.2.1.3. [La taille des binaires](#10213-la-taille-des-binaires)
+    - 1.0.2.2. [La taille des types personnalisés](#1022-la-taille-des-types-personnalisés)
+        - 1.0.2.2.1. [La taille des données](#10221-la-taille-des-données)
+        - 1.0.2.2.2. [La taille des énumérations](#10222-la-taille-des-énumérations)
+        - 1.0.2.2.3. [La taille des classes et des objets](#10223-la-taille-des-classes-et-des-objets)
 - 1.0.3. [Le nom ou alias d'une variable](#103-le-nom-ou-alias-dune-variable)
 - 1.0.4. [La durée de vie d'une variable](#104-la-durée-de-vie-dune-variable)
 - 1.0.5. [L'information d'une variable](#105-linformation-dune-variable)
@@ -226,6 +234,72 @@ Nous avons un peu effleuré les concepts d'***objet***, d'***encapsulation*** et
 À retenir, le mot clé **class** que nous verrons plus tard comment utiliser.
 
 #### 1.0.2. La taille d'une variable
+
+##### 1.0.2.1. La taille des types primitifs
+
+La taille des variables de type primitif sont spécifiées par le standard du language de programmation Mrald.
+
+##### 1.0.2.1.1. La taille des intégrales
+
+Voici un tableau comparatif des tailles représentées par les types intégraux:
+| Type      | Nombre de bits    | Nombre d'octets   |
+| --------- | ----------------- | ----------------- |
+|	char	|	8		        |   1               |
+|	short	|	16		        |   2               |
+|	int     |	32		        |   4               |
+|	long	|	64		        |   8               |
+|	int8	|	8		        |   1               |
+|	int16	|	16		        |   2               |
+|	int32	|	32		        |   4               |
+|	int64	|	64		        |   8               |
+|	byte	|	8		        |   1               |
+|	ushort	|	16		        |   2               |
+|	uint	|	32		        |   4               |
+|	ulong	|	64		        |   8               |
+|	uint8	|	8		        |   1               |
+|	uint16	|	16		        |   2               |
+|	uint32	|	32		        |   4               |
+|	uint64	|	64		        |   8               |
+
+##### 1.0.2.1.2. La taille des flottantes
+
+Voici un tableau comparatif des tailles représentées par les types flottants:
+| Type      | Nombre de bits    | Nombre d'octets   |
+| --------- | ----------------- | ----------------- |
+|   float   |   32              |   4               |
+|	f32     |	32              |   4               |
+|	double	|	64              |   8               |
+|	f64     |	64              |   8               |
+
+##### 1.0.2.1.3. La taille des binaires
+
+Voici un tableau comparatif des tailles représentées par les types binaires:
+| Type      | Nombre de bits    | Nombre d'octets   |
+| --------- | ----------------- | ----------------- |
+|   boolean |   32              |   4               |
+
+##### 1.0.2.2. La taille des types personnalisés
+
+##### 1.0.2.2.1. La taille des données
+
+La taille des variables de type données est la somme de la taille de tous les 'champs' du type de données.
+
+##### 1.0.2.2.2. La taille des énumérations
+
+La taille des variables de type énumération est la taille du type d'intégrale qui a été automatiquement déduite par le compilateur.
+
+##### 1.0.2.2.3. La taille des classes et des objets
+
+La taille des classes est connue par le compilateur, même en cas de *'polymorphisme'*, mais il faut distinguer la taille des classes; de la taille des objets de la classe.
+
+Nous n'expliquerons pas ici comment le calcul de la taille d'une classe se fait, mais sachez que c'est le travail du compilateur de le faire. D'ailleurs il est inutile pour les 'usagers' de connaître la taille des classes.
+
+La taille des objets d'une classe est la somme de la taille de ses 'membres attributs'.
+
+La taille d'un 'membre attribut' varie selon son 'type':
+- C'est-à-dire, qu'un 'membre attribut' dont le type est soit primitif, données ou énumération a une taille connue et définitive par le compilateur
+- Toutefois, lorsqu'un 'membre attribut' est de type 'classe' alors le calcul de la taille peut dans certains cas, ne pas être calculable; sauf au moment de la création de l'objet. En d'autre terme, cela va dépendre si le 'membre attribut' est *'polymorphique'*
+
 
 #### 1.0.3. Le nom ou alias d'une variable
 
