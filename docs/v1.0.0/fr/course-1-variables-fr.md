@@ -63,24 +63,24 @@ Cela implique, par conséquent, 2 choses:
 
 Voici un tableau comparatif des valeurs représentées par les types intégraux:
 
-| Type 		| Signé		| Valeur Minimale 				| Valeur Maximale 				| Valeurs possibles 			|
-| --------- | --------- | ----------------------------- | ----------------------------- | ----------------------------- |
-|	char	|	Oui		|	-128						|	+127						|	256							|
-|	short	|	Oui		|	-32,768 					|	+32,767						|	65,536						|
-|	int		|	Oui		|	-2,147,483,648				|	+-2,147,483,647				|	4,294,967,296				|
-|	long	|	Oui		|	-9,223,372,036,854,775,808	|	+9,223,372,036,854,775,807	|	18,446,744,073,709,551,616	|
-|	int8	|	Oui		|	-128						|	+127						|	256							|
-|	int16	|	Oui		|	-32,768						|	+32,767						|	65,536						|
-|	int32	|	Oui		|	-2,147,483,648				|	+2,147,483,647				|	4,294,967,296				|
-|	int64	|	Oui		|	-9,223,372,036,854,775,808	|	+9,223,372,036,854,775,807	|	18,446,744,073,709,551,616	|
-|	byte	|	Non		|	0							|	+255						|	256							|
-|	ushort	|	Non		|	0							|	+65,535						|	65,536						|
-|	uint	|	Non		|	0							|	+4,294,967,295				|	4,294,967,296				|
-|	ulong	|	Non		|	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
-|	uint8	|	Non		|	0							|	+255						|	256							|
-|	uint16	|	Non		|	0							|	+65,535						|	65,536						|
-|	uint32	|	Non		|	0							|	+4,294,967,295				|	4,294,967,296				|
-|	uint64	|	Non		|	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
+| Type 		| Signé		| Valeur défaut | Valeur Minimale 				| Valeur Maximale 				| Valeurs possibles 			|
+| --------- | --------- | ------------- | ----------------------------- | ----------------------------- | ----------------------------- |
+|	char	|	Oui		|   '\0'        |	-128						|	+127						|	256							|
+|	short	|	Oui		|     0         |	-32,768 					|	+32,767						|	65,536						|
+|	int		|	Oui		|     0         |	-2,147,483,648				|	+-2,147,483,647				|	4,294,967,296				|
+|	long	|	Oui		|     0         |	-9,223,372,036,854,775,808	|	+9,223,372,036,854,775,807	|	18,446,744,073,709,551,616	|
+|	int8	|	Oui		|     0         |	-128						|	+127						|	256							|
+|	int16	|	Oui		|     0         |	-32,768						|	+32,767						|	65,536						|
+|	int32	|	Oui		|     0         |	-2,147,483,648				|	+2,147,483,647				|	4,294,967,296				|
+|	int64	|	Oui		|     0         |	-9,223,372,036,854,775,808	|	+9,223,372,036,854,775,807	|	18,446,744,073,709,551,616	|
+|	byte	|	Non		|     0         |	0							|	+255						|	256							|
+|	ushort	|	Non		|     0         |	0							|	+65,535						|	65,536						|
+|	uint	|	Non		|     0         |	0							|	+4,294,967,295				|	4,294,967,296				|
+|	ulong	|	Non		|     0         |	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
+|	uint8	|	Non		|     0         |	0							|	+255						|	256							|
+|	uint16	|	Non		|     0         |	0							|	+65,535						|	65,536						|
+|	uint32	|	Non		|     0         |	0							|	+4,294,967,295				|	4,294,967,296				|
+|	uint64	|	Non		|     0         |	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
 
 ##### 1.0.1.1.2. Les flottantes
 Les variables de type flottante peuvent contenir des valeurs avec des parts fractionnelles.
@@ -99,12 +99,12 @@ Les flottantes non supportées ou expérimentales:
 
 Voici un tableau comparatif des valeurs représentées par les types flottants:
 
-| Type 		| Signé		| Valeur Minimale 				| Valeur Maximale 				| Nombre de chiffres 			|
-| --------- | --------- | ----------------------------- | ----------------------------- | ----------------------------- |
-|   float   |   Oui     |   ~ -3.4x10e38                |   ~ +3.4x10e38                |   7                           |
-|   f32     |   Oui     |   ~ -3.4x10e38                |   ~ +3.4x10e38                |   7                           |
-|   double  |   Oui     |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
-|   f64     |   Oui     |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
+| Type 		| Signé		| Valeur défaut | Valeur Minimale 				| Valeur Maximale 				| Nombre de chiffres 			|
+| --------- | --------- | ------------- | ----------------------------- | ----------------------------- | ----------------------------- |
+|   float   |   Oui     |   0.0         |   ~ -3.4x10e38                |   ~ +3.4x10e38                |   7                           |
+|   f32     |   Oui     |   0.0         |   ~ -3.4x10e38                |   ~ +3.4x10e38                |   7                           |
+|   double  |   Oui     |   0.0         |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
+|   f64     |   Oui     |   0.0         |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
 
 ##### 1.0.1.1.3. Les binaires
 Les variables de type binaire ne peuvent contenir que 2 valeurs possibles:
@@ -118,9 +118,9 @@ Les binaires supportées:
 - Les booléens (boolean)
 
 Voici un tableau comparatif des valeurs représentées par les types binaires:
-| Type      | Signé     | Valeurs possibles     |
-| --------- | --------- | --------------------- |
-|   boolean |   Non     |   true, false         |
+| Type      | Signé     | Valeur défaut | Valeurs possibles     |
+| --------- | --------- | ------------- | --------------------- |
+|   boolean |   Non     |   false       |   true, false         |
 
 ##### 1.0.1.2. Les types personnalisés
 Les types personnalisés sont aussi appelés des 'types définis par les usagers'. Lorsque vous devez utiliser une variable qui ne peut être représenté par un type primitif, il est recommandé d'utiliser un type personnalisé existant ou d'en créer un nouveau. Le standard du language de programmation Mrald permet leur création grâce aux modèles suivants:
@@ -164,7 +164,8 @@ Une énumération est un type personnalisé d'une intégrale, qui contrairement 
 Les énumérations sont souvent utilisées pour représenter des 'états' ou pour faire des manipulations de 'bits'.
 
 Points importants:
-- Les valeurs peuvent être assignées par l'usager avec des constantes; sinon le compilateur s'en occupera
+- Les valeurs peuvent être assignées par l'usager avec des constantes; sinon le compilateur doit s'en occuper
+- La valeur par 'défaut' peut être assignées par l'usager; sinon le compilateur doit s'en occuper
 - Le type d'intégrale est automatiquement déduit par le compilateur
 - Il est impossible de *'surcharger des opérateurs'* pour les énumérations
 
