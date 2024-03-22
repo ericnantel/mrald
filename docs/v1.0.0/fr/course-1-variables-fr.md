@@ -1,25 +1,26 @@
 ## 2. Cours I - Variables
 
 *Liens rapides*
-1.0. [Définition](#10-définition)
-1.0.1. [Le type d'une variable](#101-le-type-dune-variable)
-1.0.1.1 [Les types primitifs](#1011-les-types-primitifs)
-1.0.1.1.1. [Les intégrales](#10111-les-intégrales)
-1.0.1.1.2. [Les flottantes](#10112-les-flottantes)
-1.0.1.1.3. [Les binaires](#10113-les-binaires)
-1.0.1.2. [Les types personnalisés](#1012-les-types-personnalisés)
-1.0.1.2.1. [Les données](#10121-les-données)
-1.0.1.2.2. [Les énumérations](#10122-les-énumérations)
-1.0.1.2.3. [Les classes](#10123-les-classes)
-1.0.2. [La taille d'une variable](#102-la-taille-dune-variable)
-1.0.3. [Le nom ou alias d'une variable](#103-le-nom-ou-alias-dune-variable)
-1.0.4. [La durée de vie d'une variable](#104-la-durée-de-vie-dune-variable)
-1.0.5. [L'information d'une variable](#105-linformation-dune-variable)
-1.0.6. [L'accès lecture d'une variable](#106-laccès-lecture-dune-variable)
-1.0.7. [L'accès écriture d'une variable](#107-laccès-écriture-dune-variable)
-1.0.8. [L'addresse d'une variable](#108-laddresse-dune-variable)
 
-#### 1.0. Définition
+1.0. [Définition](#10-définition)
+- 1.0.1. [Le type d'une variable](#101-le-type-dune-variable)
+    - 1.0.1.1 [Les types primitifs](#1011-les-types-primitifs)
+        - 1.0.1.1.1. [Les intégrales](#10111-les-intégrales)
+        - 1.0.1.1.2. [Les flottantes](#10112-les-flottantes)
+        - 1.0.1.1.3. [Les binaires](#10113-les-binaires)
+    - 1.0.1.2. [Les types personnalisés](#1012-les-types-personnalisés)
+        - 1.0.1.2.1. [Les données](#10121-les-données)
+        - 1.0.1.2.2. [Les énumérations](#10122-les-énumérations)
+        - 1.0.1.2.3. [Les classes](#10123-les-classes)
+- 1.0.2. [La taille d'une variable](#102-la-taille-dune-variable)
+- 1.0.3. [Le nom ou alias d'une variable](#103-le-nom-ou-alias-dune-variable)
+- 1.0.4. [La durée de vie d'une variable](#104-la-durée-de-vie-dune-variable)
+- 1.0.5. [L'information d'une variable](#105-linformation-dune-variable)
+- 1.0.6. [La mutabilité d'une variable](#106-la-mutabilité-dune-variable)
+- 1.0.7. [L'identifiant d'une variable](#107-lidentifiant-dune-variable)
+- 1.0.8. [L'addresse d'une variable](#108-laddresse-dune-variable)
+
+### 1.0. Définition
 Les variables sont des 'boîtes' qui conservent de l'information.
 Toutes variables possèdent les propriétés fondamentales suivantes:
 - Un type
@@ -27,8 +28,8 @@ Toutes variables possèdent les propriétés fondamentales suivantes:
 - Un nom ou alias
 - Une durée de vie
 - De l'information
-- Un accès lecture
-- Un accès écriture
+- Une mutabilité
+- Un identifiant
 - Une addresse
 
 #### 1.0.1. Le type d'une variable
@@ -38,14 +39,14 @@ Il existe 2 catégories de type de variables:
 - Types primitifs
 - Types personnalisés
 
-#### 1.0.1.1. Les types primitifs
+##### 1.0.1.1. Les types primitifs
 Les types primitifs aussi appelés 'types fondamentaux' sont spécifiés par le standard du language de programmation Mrald.
 Les types primitifs sont séparés en 3 sous-catégories:
 - Les intégrales
 - Les flottantes
 - Les binaires
 
-#### 1.0.1.1.1. Les intégrales
+##### 1.0.1.1.1. Les intégrales
 Les variables de type intégral ne peuvent contenir que des valeurs entières comme information.
 ex: 0, -1, 2014, -31
 
@@ -81,7 +82,7 @@ Voici un tableau comparatif des valeurs représentées par les types intégraux:
 |	uint32	|	Non		|	0							|	+4,294,967,295				|	4,294,967,296				|
 |	uint64	|	Non		|	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
 
-#### 1.0.1.1.2. Les flottantes
+##### 1.0.1.1.2. Les flottantes
 Les variables de type flottante peuvent contenir des valeurs avec des parts fractionnelles.
 ex: -0.555, 3.6667, 0.0, 3.14
 
@@ -105,7 +106,7 @@ Voici un tableau comparatif des valeurs représentées par les types flottants:
 |   double  |   Oui     |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
 |   f64     |   Oui     |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
 
-#### 1.0.1.1.3. Les binaires
+##### 1.0.1.1.3. Les binaires
 Les variables de type binaire ne peuvent contenir que 2 valeurs possibles:
 - true
 - false
@@ -121,38 +122,43 @@ Voici un tableau comparatif des valeurs représentées par les types binaires:
 | --------- | --------- | --------------------- |
 |   boolean |   Non     |   true, false         |
 
-#### 1.0.1.2. Les types personnalisés
+##### 1.0.1.2. Les types personnalisés
 Les types personnalisés sont aussi appelés des 'types définis par les usagers'. Lorsque vous devez utiliser une variable qui ne peut être représenté par un type primitif, il est recommandé d'utiliser un type personnalisé existant ou d'en créer un nouveau. Le standard du language de programmation Mrald permet leur création grâce aux modèles suivants:
 - Les données
 - Les énumérations
 - Les classes
 
-#### 1.0.1.2.1. Les données
+##### 1.0.1.2.1. Les données
 Reprenant notre exemple des 'boîtes', imaginez que vous collez plusieurs de ces petites 'boîtes' ensemble pour ne former qu'un seul 'meuble de rangement'. L'avantage d'avoir regroupé ces 'boîtes' c'est que vous pouvez créer des variables qui peuvent contenir plus d'information.
 
 Dorénavant les 'boîtes' que vous avez mises ensemble seront nommées des 'champs' dans votre nouveau type de données. Il est primordial que vous comprenez que nous n'avons pas créé une plus grosse 'boîte', mais plutôt un 'espace de rangement' pour ces 'boîtes' que l'on appèlera des 'champs'.
 
 Points très importants:
 - Un type de données ne comporte **que** des 'champs'
-- Les 'champs' sont tous publiquement accessibles
-- Les 'champs' sont tous mutables*
+- Les 'champs' n'ont pas durée de vie prolongée*(1)
+- Les 'champs' sont tous mutables*(2)
+- Les 'champs' sont tous publiquement accessibles*(3)
 - Il faut accéder aux 'champs' pour lire ou conserver l'information
 - La 'disposition' de ses 'champs' est fixe
-- Il est impossible de remplacer ses 'champs'
-- Il est impossible de spécifier un 'niveau d'accès' à un 'champs'
-- Il est impossible de spécifier une 'mutabilité' à un 'champs'
-- Vous ne pouvez **pas** utiliser de *classe* comme type de 'champs'
-- Il est permis d'utiliser des types primitifs, données**, énumérations comme type de 'champs'
+- Vous ne pouvez **pas** utiliser de *classe* comme type de 'champs'*(4)
+- Il est permis d'utiliser des types primitifs, données*(5), énumérations comme type de 'champs'
+- Il est permis de *'surcharger des opérateurs'* pour un type de données
 
-*Les 'champs' d'un type de données ne peuvent pas être *non-mutable*. Seuls les variables, ou *'membres d'une classe'*, ont cette propriété.
+*(1)Les 'champs' disparaissent tous lorsque la durée de vie de la variable se termine.
 
-**Sous les conditions suivantes:
+*(2)Les 'champs' d'un type de données ne peuvent pas être *non-mutable*. Seuls les variables, ou *'membres d'une classe'*, ont cette propriété. Par conséquent, il est impossible de spécifier une 'mutabilité' aux 'champs' d'un type de données.
+
+*(3)Les 'champs' d'un type de données ne peuvent pas être *'encapsulés'*. Seuls les *'membres attributs d'une classe'* ont cette propriété. Par conséquent, il est impossible de spécifier un *'niveau d'accès'* aux 'champs' d'un type de données.
+
+*(4)Les 'champs' ne peuvent **pas** être 'construits' ou initialisé par des objets.
+
+*(5)Sous les conditions suivantes:
 - Les types de données valides pour des 'champs' doivent être **différents** des types de données définis
 - Les types de données valides pour des 'champs' ne doivent **pas** comporter  de 'champs' de données à leur tour
 
 À retenir, le mot clé **data** que nous verrons plus tard comment utiliser.
 
-#### 1.0.1.2.2. Les énumérations
+##### 1.0.1.2.2. Les énumérations
 Une énumération est un type personnalisé d'une intégrale, qui contrairement à un type primitif, ne peut que prendre certaines valeurs entières fixes et prédéfinies.
 
 Les énumérations sont souvent utilisées pour représenter des 'états' ou pour faire des manipulations de 'bits'.
@@ -160,10 +166,11 @@ Les énumérations sont souvent utilisées pour représenter des 'états' ou pou
 Points importants:
 - Les valeurs peuvent être assignées par l'usager avec des constantes; sinon le compilateur s'en occupera
 - Le type d'intégrale est automatiquement déduit par le compilateur
+- Il est impossible de *'surcharger des opérateurs'* pour les énumérations
 
 À retenir, le mot clé **enum** que nous verrons plus tard comment utiliser.
 
-#### 1.0.1.2.3. Les classes
+##### 1.0.1.2.3. Les classes
 Les classes sont comme un dessin industriel pour une voiture. Sur le dessin, on spécifie combien il y aura de roues, de sièges, mais le dessin vous dira aussi si le véhicule peut se déplacer, stopper, ou perdre du carburant lorsqu'il se déplace à une certaine vitesse. Eh bien, c'est ça une classe. Lorsque vous créez une variable de type classe, elle possédera tous les **'atouts'** que la classe lui fournira, mais **pas tous** seront **accessibles**.
 
 Les variables des classes s'appèlent des **'objets'**.
@@ -189,9 +196,15 @@ Pour qu'un 'membre attribut' soit *non-mutable* vous devez utilisez le mot clé 
 
 Points très importants:
 - Il est impossible de modifier ses 'membres méthodes'
-- Il est impossible de modifier le 'niveau d'accès' des membres d'une classe
 - Il est impossible de modifier la 'mutabilité' des 'membres attributs' d'une classe
+- Tout 'membre attribut' de type primitif peut être initialisé par défaut
+- Tout 'membre attribut' de type énumération peut être initialisé par défaut
+- Tout 'membre attribut' de type données doit explicitement être initialisé (dans chacun des constructeurs de la classe)*
+- Tout 'membre attribut' de type classe doit explicitement être initialisé (dans chacun des constructeurs de la classe)*
 - Tout 'membre attribut' non-mutable doit explicitement être initialisé (dans chacun des contructeurs de la classe)*
+- Il est impossible de modifier le 'niveau d'accès' des membres d'une classe
+- Il est permis de *'surcharger des opérateurs'* pour une classe
+- Il n'est **pas** permis d'utiliser un *'opérateur'* comme 'méthode membre'
 
 Pour y voir plus clair avec les 'niveaux d'accès' et la mutabilité des 'membres attributs', voici un petit exemple:
 - Vous avez une maison, c'est un objet qui a été contruit par une architecte. Celle-ci comporte 3 chambres chacune avec porte et code d'accès. La première chambre est pour invité et le code d'accès est publiquement affiché sur la porte. La deuxième chambre est vous et à votre mère et vous seuls avez son code d'accès. La troisième chambre est à vous, il n'y a que vous qui connaissez le code pour y entrer et il vous est interdit de le partager.
@@ -219,9 +232,9 @@ Nous avons un peu effleuré les concepts d'***objet***, d'***encapsulation*** et
 
 #### 1.0.5. L'information d'une variable
 
-#### 1.0.6. L'accès lecture d'une variable
+#### 1.0.6. La mutabilité d'une variable
 
-#### 1.0.7. L'accès écriture d'une variable
+#### 1.0.7. L'identifiant d'une variable
 
 #### 1.0.8. L'addresse d'une variable
 
