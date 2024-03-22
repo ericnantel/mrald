@@ -337,6 +337,13 @@ Notes importantes:
 
 #### 1.0.4. La durée de vie d'une variable
 
+La durée de vie d'une variable est définie par son *'bloc natif'*.
+
+Le standard du language de programmation Mrald spécifie qu'**aucune variable** (ne pas confondre avec les 'membres attributs' d'une classe) n'**existe en dehors de son *'bloc natif' et sous-blocs***. On dit donc que les variables sont **locales**.
+
+Notes importantes:
+- Une variable peut cependant être visible dans un 'bloc d'appel' par l'entremise d'un alias, tant que ce 'bloc d'appel' soit 'appelé' à l'intérieur du 'bloc natif' de la variable
+
 #### 1.0.5. L'information d'une variable
 
 #### 1.0.6. La mutabilité d'une variable
@@ -369,8 +376,11 @@ Notes importantes:
 Selon le standard du language de programmation Mrald, il est formellement spécifié qu'**aucune variable** ne peut être **'globale'**. Une variable ne peut qu'être *locale* dans son *bloc natif ou sous-blocs suivants*.
 
 Notes importantes:
+- Une variable peut être visible *(1) dans un 'bloc d'appel' avec un alias
 - Il est impossible de créer une variable *'globale'*
 - Il est impossible d'*exporter* une variable d'un *'module'*; puisque ce n'est pas valide comme *composante exposable de module*
+
+*(1)Il est **requis** que la variable existe pour être visible
 
 #### 1.0.10. L'addresse d'une variable
 
