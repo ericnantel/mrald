@@ -342,7 +342,7 @@ La durée de vie d'une variable est définie par son *'bloc natif'*.
 Le standard du language de programmation Mrald spécifie qu'**aucune variable** (ne pas confondre avec les 'membres attributs' d'une classe) n'**existe en dehors de son *'bloc natif' et sous-blocs***. On dit donc que les variables sont **locales**.
 
 Notes importantes:
-- Une variable peut cependant être visible dans un 'bloc d'appel' par l'entremise d'un alias, tant que ce 'bloc d'appel' soit 'appelé' à l'intérieur du 'bloc natif' de la variable
+- Une variable peut utiliser un alias et être 'visible' dans un autre bloc (bloc d'appel)
 
 #### 1.0.5. L'information d'une variable
 
