@@ -26,7 +26,9 @@
 - 1.0.5. [L'information d'une variable](#105-linformation-dune-variable)
 - 1.0.6. [La mutabilité d'une variable](#106-la-mutabilité-dune-variable)
 - 1.0.7. [L'identifiant d'une variable](#107-lidentifiant-dune-variable)
-- 1.0.8. [L'addresse d'une variable](#108-laddresse-dune-variable)
+- 1.0.8. [La nature d'une variable](#108-la-nature-dune-variable)
+- 1.0.9. [La visibilité d'une variable](#109-la-visibilité-dune-variable)
+- 1.0.10. [L'addresse d'une variable](#1010-laddresse-dune-variable)
 
 ### 1.0. Définition
 Les variables sont des 'boîtes' qui conservent de l'information.
@@ -38,11 +40,14 @@ Toutes variables possèdent les propriétés fondamentales suivantes:
 - De l'information
 - Une mutabilité
 - Un identifiant
+- Une nature
 - Une addresse
 
 #### 1.0.1. Le type d'une variable
 Le type restreint la variable à ce qu'elle peut contenir comme information.
+
 Il est impossible de changer le type d'une variable une fois déclarée.
+
 Il existe 2 catégories de type de variables:
 - Types primitifs
 - Types personnalisés
@@ -53,6 +58,8 @@ Les types primitifs sont séparés en 3 sous-catégories:
 - Les intégrales
 - Les flottantes
 - Les binaires
+
+Tous les types primitifs sont copiables.
 
 ##### 1.0.1.1.1. Les intégrales
 Les variables de type intégral ne peuvent contenir que des valeurs entières comme information.
@@ -141,6 +148,8 @@ Reprenant notre exemple des 'boîtes', imaginez que vous collez plusieurs de ces
 
 Dorénavant les 'boîtes' que vous avez mises ensemble seront nommées des 'champs' dans votre nouveau type de données. Il est primordial que vous comprenez que nous n'avons pas créé une plus grosse 'boîte', mais plutôt un 'espace de rangement' pour ces 'boîtes' que l'on appèlera des 'champs'.
 
+Tous les types de données sont copiables.
+
 Points très importants:
 - Un type de données ne comporte **que** des 'champs'
 - Les 'champs' n'ont pas durée de vie prolongée*(1)
@@ -150,7 +159,7 @@ Points très importants:
 - La 'disposition' de ses 'champs' est fixe
 - Vous ne pouvez **pas** utiliser de *classe* comme type de 'champs'*(4)
 - Il est permis d'utiliser des types primitifs, données*(5), énumérations comme type de 'champs'
-- Il est permis de *'surcharger des opérateurs'* pour un type de données
+- Il est permis de *'surcharger des opérateurs'* pour un type de données*(6)
 
 *(1)Les 'champs' disparaissent tous lorsque la durée de vie de la variable se termine.
 
@@ -164,12 +173,16 @@ Points très importants:
 - Les types de données valides pour des 'champs' doivent être **différents** des types de données définis
 - Les types de données valides pour des 'champs' ne doivent **pas** comporter  de 'champs' de données à leur tour
 
+*(6)Sauf les opérateurs réservés et l'opérateur **'as'**
+
 À retenir, le mot clé **data** que nous verrons plus tard comment utiliser.
 
 ##### 1.0.1.2.2. Les énumérations
 Une énumération est un type personnalisé d'une intégrale, qui contrairement à un type primitif, ne peut que prendre certaines valeurs entières fixes et prédéfinies.
 
 Les énumérations sont souvent utilisées pour représenter des 'états' ou pour faire des manipulations de 'bits'.
+
+Tous les types d'énumérations sont copiables.
 
 Points importants:
 - Les valeurs peuvent être assignées par l'usager avec des constantes; sinon le compilateur doit s'en occuper
@@ -186,6 +199,8 @@ Les variables des classes s'appèlent des **'objets'**.
 
 La définition formelle d'un objet selon le standard du language de programmation Mrald est la suivante:
 - *L'objet est l'instance d'une classe*
+
+Les objets ne sont **pas tous copiables**.
 
 Les classes ont des 'membres'.*
 Ces 'membres' sont divisés en 2 catégories:
@@ -204,6 +219,7 @@ Par **défaut**, les 'membres attributs' sont **mutables**.
 Pour qu'un 'membre attribut' soit *non-mutable* vous devez utilisez le mot clé **readonly**.
 
 Points très importants:
+- Seuls les objets **copiables** peuvent être 'retourner par une fonction, méthode ou opérateur'
 - Il est impossible de modifier ses 'membres méthodes'
 - Il est impossible de modifier la 'mutabilité' des 'membres attributs' d'une classe
 - Tout 'membre attribut' de type primitif peut être initialisé par défaut
@@ -212,7 +228,7 @@ Points très importants:
 - Tout 'membre attribut' de type classe doit explicitement être initialisé (dans chacun des constructeurs de la classe)*
 - Tout 'membre attribut' non-mutable doit explicitement être initialisé (dans chacun des contructeurs de la classe)*
 - Il est impossible de modifier le 'niveau d'accès' des membres d'une classe
-- Il est permis de *'surcharger des opérateurs'* pour une classe
+- Il est permis de *'surcharger des opérateurs'* pour une classe (sauf pour les opérateurs réservés et sauf l'opérateur **'as'** qui sera pris en charge par le compilateur dans un *contexte d'héritage*)
 - Il n'est **pas** permis d'utiliser un *'opérateur'* comme 'méthode membre'
 
 Pour y voir plus clair avec les 'niveaux d'accès' et la mutabilité des 'membres attributs', voici un petit exemple:
@@ -311,8 +327,42 @@ La taille d'un 'membre attribut' varie selon son 'type':
 
 #### 1.0.7. L'identifiant d'une variable
 
-#### 1.0.8. L'addresse d'une variable
+#### 1.0.8. La nature d'une variable
 
+La nature d'une variable informe le compilateur si une variable est soit créée 'de toute pièce', soit une 'copie' ou soit un 'alias' (aka une réference).
+
+Dans un contexte où une variable est un 'paramètre d'entrée', l'usager peut informer le compilateur de sa nature.
+
+Dans un contexte où une variable est créée ou modifiée par un 'retour de fonction, méthode ou opérateur', le standard du language de programmation Mrald spécifie que le compilateur **doit** impérativement faire une 'copie' (c'est-à-dire aucun retour par référence).
+
+*Certains objets (aka instances d'une classe) pourrait ne pas être 'copiable' ou trop 'lourd'.
+
+Notes importantes:
+- Par **défaut** les 'paramètres' sont des **'alias'** (aka des réferences) **mutables**
+- Si l'usager utilise le mot clé **readonly** dans la *'signature du paramètre'* alors c'est un **'alias non-mutable'**
+- Si l'usager utilise le mot clé **copy** dans la *'signature du paramètre'* alors c'est une **'copie'**
+- Vous ne pouvez **pas** utilisez les mots clé **readonly** et **copy** essemble dans la **même** 'signature du paramètre'
+- Il est impossible pour un 'usager' d'informer le compilateur de la nature d'une variable quand celle-ci est créée ou modifiée par un 'retour de fonction, méthode ou opérateur', parce que celle-ci **doit** toujours être une copie
+- Toute variable de type primitifs, données ou énumérations sont **copiable**
+- Il est **impossible** qu'un **'retour de fonction, méthode ou opérateur'** puisse retourner un **'objet non copiable'**. Le compilateur est formellement interdit, par le standard du language de programmation Mrald, de produire une compilation de ce *'type de bloc'*
+
+#### 1.0.9. La visibilité d'une variable
+
+Selon le standard du language de programmation Mrald, il est formellement spécifié qu'**aucune variable** ne peut être **'globale'**. Une variable ne peut qu'être *locale* dans son *bloc natif ou sous-blocs suivants*.
+
+Notes importantes:
+- Il est impossible de créer une variable *'globale'*
+- Il est impossible d'*exporter* une variable d'un *'module'*; puisque ce n'est pas valide comme *composante exposable de module*
+
+#### 1.0.10. L'addresse d'une variable
+
+L'addresse d'une variable ou d'un objet c'est en quelque sorte son espace de rangement. C'est l'endroit en mémoire qui détient de l'information. Parfois l'information d'une variable est une autre addresse et la valeur de celle-ci peut aussi changer puisqu'elle se trouve dans une variable. Donc l'addresse on ne la connait pas à l'avance, il faut généralement la demander au système d'opération quand on a besoin de beaucoup d'espace. Nous 'empruntons' de l'espace (aka de la mémoire), et celle-ci est limitée sur une machine et quand on 'libère de la mémoire' on dit essentiellement au système d'opération qu'il peut s'en servir pour autre chose. Si on ne fait pas attention à la gestion des addresses (aka la gestion de la mémoire) et qu'on essaie d'accéder à ce qui s'y trouve on risque de causer des crashs, des gels, des comportements inhabituels, voire des dégâts ou bris sur la machine. Yikes..
+
+D'autant plus, les processeurs modernes sont multitaches et possède les capabilités de traiter des opérations en parallèle, avec des 'threads' par exemple, alors il faut aussi ajouter des méchanismes sécuritaires pour éviter que plus d'un *'thread'* puisse *'exécuter une instruction d'écriture'* sur une même *'section critique'* ou qu'on utilise des *'primitives atomiques'* ou des *'instructions vectorielles'* lorsque c'est avantageux.
+
+Pour toutes ces raisons, le standard du language de programmation Mrald **interdit** formellement que le compilateur donne aux 'usagers' accès aux addresses, que ce soit pour des variables, objets, fonctions, etc. Cela doit être encapsulé par le compilateur.
+
+Évidemment, il existe des outils pour le développement qui pourrait en quelques sortes montrer des addresses en temps réel avec du code déassemblé, mais cela est différent que si vous écriviez du code et que vous utilisiez des 'pointeurs'. Les **'pointeurs'** ne sont **pas autorisé** et ne font pas parti du standard du language de programmation Mrald.
 
 [Précédent](/docs/v1.0.0/fr/hello-world-fr.md) | [Suivant]()
 
