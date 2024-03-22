@@ -232,7 +232,7 @@ Points très importants:
 - Il n'est **pas** permis d'utiliser un *'opérateur'* comme 'méthode membre'
 
 Pour y voir plus clair avec les 'niveaux d'accès' et la mutabilité des 'membres attributs', voici un petit exemple:
-- Vous avez une maison, c'est un objet qui a été contruit par une architecte. Celle-ci comporte 3 chambres chacune avec porte et code d'accès. La première chambre est pour invité et le code d'accès est publiquement affiché sur la porte. La deuxième chambre est vous et à votre mère et vous seuls avez son code d'accès. La troisième chambre est à vous, il n'y a que vous qui connaissez le code pour y entrer et il vous est interdit de le partager.
+- Vous avez une maison, c'est un objet qui a été contruit par une architecte. Celle-ci comporte 3 chambres chacune avec porte et code d'accès. La première chambre est pour invité et le code d'accès est publiquement affiché sur la porte. La deuxième chambre est à vous et votre mère; et vous seuls avez son code d'accès. La troisième chambre est à vous, il n'y a que vous qui connaissez le code pour y entrer et il vous est interdit de le partager, à tout jamais.
 - Dans la deuxième chambre, il y a des meubles mais selon les plans de l'architecte, il est impossible de les déplacer dans la pièce. Heureusement, dans la troisième chambre, à vous, vous pouvez ajouter des meubles comme bon vous souhaite. Mais peut importe si vous pouviez apporter des changements dans votre chambre, votre mère ne pourra jamais y accéder, puisque c'est écrit ainsi dans les plans de l'architecte. Et personne ne peut changer les plans.
 - Voyons si vous avez compris ceci:
     - Les plans de l'architecte sont la classe
@@ -306,7 +306,9 @@ La taille des variables de type énumération est la taille du type d'intégrale
 
 ##### 1.0.2.2.3. La taille des classes et des objets
 
-La taille des classes est connue par le compilateur, même en cas de *'polymorphisme'*, mais il faut distinguer la taille des classes; de la taille des objets de la classe.
+La taille des classes est connue par le compilateur, même en cas de *'polymorphisme'* *(1), mais il faut distinguer la taille des classes; de la taille des objets de la classe.
+
+Un classe pourrait avoir une *'table virtuelle (vtable)'*. Cette table **doit** être encapsulée par le compilateur, selon le standard du language de programmation Mrald.
 
 Nous n'expliquerons pas ici comment le calcul de la taille d'une classe se fait, mais sachez que c'est le travail du compilateur de le faire. D'ailleurs il est inutile pour les 'usagers' de connaître la taille des classes.
 
@@ -316,8 +318,21 @@ La taille d'un 'membre attribut' varie selon son 'type':
 - C'est-à-dire, qu'un 'membre attribut' dont le type est soit primitif, données ou énumération a une taille connue et définitive par le compilateur
 - Toutefois, lorsqu'un 'membre attribut' est de type 'classe' alors le calcul de la taille peut dans certains cas, ne pas être calculable; sauf au moment de la création de l'objet. En d'autre terme, cela va dépendre si le 'membre attribut' est *'polymorphique'*
 
+*(1)Le standard du language de programmation Mrald spécifie que *toute classe mère* **doit** connaître *tous ses enfants*, **même sans utilisation de polymorphisme**. Le standard du language de programmation Mrald spécifie aussi qu'il ne peut **pas** y avoir de **classe grand-mère**. Le standard du language de programmation Mrald spécifie aussi qu'une classe ne peut **pas être descendante d'elle-même ou de ses enfants**.
+
 
 #### 1.0.3. Le nom ou alias d'une variable
+
+Le nom est défini lors de la déclaration d'une variable.
+Différents noms (alias) peuvent désigner la même variable.
+Le nom ou l'alias d'une variable est la principale façon d'utiliser une variable. *(1)
+
+Notes importantes:
+- Il est impossible d'utiliser un alias d'une variable dans son *'bloc natif ou sous-blocs'*
+- **Sans** l'utilisation du **nom ou alias** vous ne pouvez **pas accéder à l'information** qu'elle contient **avec** l'utilisation de l'**opérateur d'accès (.)**.
+- **Sans** l'utilisation du **nom ou alias** vous ne pouvez **pas assigner une information avec l'opérateur assignement (=)**.
+
+*(1)Toutefois, le compilateur peut déduire une variable *'temporaire'* sans que l'usager ait eu recours à un nom ou alias.
 
 #### 1.0.4. La durée de vie d'une variable
 
@@ -333,7 +348,7 @@ La nature d'une variable informe le compilateur si une variable est soit créée
 
 Dans un contexte où une variable est un 'paramètre d'entrée', l'usager peut informer le compilateur de sa nature.
 
-Dans un contexte où une variable est créée ou modifiée par un 'retour de fonction, méthode ou opérateur', le standard du language de programmation Mrald spécifie que le compilateur **doit** impérativement faire une 'copie' (c'est-à-dire aucun retour par référence).
+Dans un contexte où une variable est créée ou modifiée par un 'retour de fonction, méthode ou opérateur', le standard du language de programmation Mrald spécifie que le compilateur **doit** impérativement faire une 'copie' (c'est-à-dire aucun retour par référence). Même un cas particulier où 'une fonction, méthode ou opérateur' retournerait une *'valeur constante'* dans le code, le compilateur **doit** impérativement générer une variable *'temporaire'* pour que *'la commande de retour'* puisse faire une 'copie'.
 
 *Certains objets (aka instances d'une classe) pourrait ne pas être 'copiable' ou trop 'lourd'.
 
@@ -341,7 +356,9 @@ Notes importantes:
 - Par **défaut** les 'paramètres' sont des **'alias'** (aka des réferences) **mutables**
 - Si l'usager utilise le mot clé **readonly** dans la *'signature du paramètre'* alors c'est un **'alias non-mutable'**
 - Si l'usager utilise le mot clé **copy** dans la *'signature du paramètre'* alors c'est une **'copie'**
-- Vous ne pouvez **pas** utilisez les mots clé **readonly** et **copy** essemble dans la **même** 'signature du paramètre'
+- **Si** l'usager **utilise une valeur par défaut** dans la *'signature du paramètre'* alors le compilateur déduit que c'est une **'copie'**
+- Vous ne pouvez **pas** utilisez les mots clé **readonly** et **copy** ensemble dans la **même** 'signature du paramètre'
+- Vous ne pouvez **pas** utilisez le mot clé **readonly** et **utilisez une valeur par défaut** ensemble dans la **même** 'signature du paramètre'
 - Il est impossible pour un 'usager' d'informer le compilateur de la nature d'une variable quand celle-ci est créée ou modifiée par un 'retour de fonction, méthode ou opérateur', parce que celle-ci **doit** toujours être une copie
 - Toute variable de type primitifs, données ou énumérations sont **copiable**
 - Il est **impossible** qu'un **'retour de fonction, méthode ou opérateur'** puisse retourner un **'objet non copiable'**. Le compilateur est formellement interdit, par le standard du language de programmation Mrald, de produire une compilation de ce *'type de bloc'*
