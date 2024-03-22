@@ -328,6 +328,7 @@ Différents noms (alias) peuvent désigner la même variable.
 Le nom ou l'alias d'une variable est la principale façon d'utiliser une variable. *(1)
 
 Notes importantes:
+- Il est **impossible d'utiliser un nom ou alias** d'une variable **avant sa déclaration**
 - Il est impossible d'utiliser un alias d'une variable dans son *'bloc natif ou sous-blocs'*
 - **Sans** l'utilisation du **nom ou alias** vous ne pouvez **pas accéder à l'information** qu'elle contient **avec** l'utilisation de l'**opérateur d'accès (.)**.
 - **Sans** l'utilisation du **nom ou alias** vous ne pouvez **pas assigner une information avec l'opérateur assignement (=)**.
