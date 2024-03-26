@@ -346,9 +346,33 @@ Notes importantes:
 
 #### 1.0.5. L'information d'une variable
 
+L'information d'une variable doit être fidèle au type.
+
+Lorsqu'un symbole constant et numérique est utilisé comme valeur, alors généralement le compilateur est en mesure d'en déduire son type.
+
+Ne pas confondre déduction avec conversion.
+
+Il arrive parfois que l'on veuille utiliser une valeur de type différent pour initialiser une variable. Dans ce cas, il **faut obligatoirement** utiliser l'opérateur de conversion **'as'** et déclarer une nouvelle variable du type choisi avec l'opérateur 'as'.
+
+Selon le standard du language de programmation Mrald, le compilateur **doit** fournir une valeur par défaut aux types primitifs. Donc les variables, 'champs', 'membres attributs' de type primitif ne sont pas forcés de fournir une valeur d'initialisation, **sauf** lorsque ceux-ci sont 'non-mutables'.
+
 #### 1.0.6. La mutabilité d'une variable
 
+Par défaut, une variable est mutable, c'est-à-dire que son information peut être modifiée.
+
+Les 'champs' d'un type de données sont tous mutables.
+Les 'membres attributs' d'une classe possèdent aussi une mutabilité.
+Les 'alias' d'une variable possèdent aussi une mutabilité.
+
+La mutabilité se défini lors d'une déclaration de variable, 'alias' ou 'membre attribut'.
+
+Il faut utiliser le mot clé **readonly** pour désigner une variable, 'alias' ou 'membre attribut' non-mutable.
+
 #### 1.0.7. L'identifiant d'une variable
+
+L'identifiant désigne une 'trace unique' de variable et différencie une 'création' d'un 'alias'.
+
+L'identifiant **doit** être généré et encapsulé par le compilateur.
 
 #### 1.0.8. La nature d'une variable
 
