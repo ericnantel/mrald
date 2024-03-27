@@ -433,6 +433,7 @@ Pour toutes ces raisons, le standard du language de programmation Mrald **interd
 - Un alias est une référence à une variable existante.
 - L'alias se comporte exactement comme n'importe quelle variable.
 - L'alias doit utiliser le même type que la 'variable d'origine'.
+- L'alias ne peut pas coexister avec la 'variable d'origine' dans son 'bloc natif' ou ses 'sous-blocs' en portant le même nom.
 - L'alias peut utiliser un nom différent dans un bloc 'exterieur' au 'bloc natif'.
 - La durée de vie d'un alias fonctionne exactement comme n'importe quelle variable.
 - L'alias ne peut pas rallonger la durée de vie de la 'variable d'origine'.
@@ -460,6 +461,7 @@ Les copies sont préférables lorsque les variables ne sont pas trop 'lourdes à
 
 - Un paramètre est une variable d'entrée de 'bloc d'appel'.
 - La nature d'un paramètre est soit un 'alias' ou une 'copie'.
+- La nature d'une paramètre par défaut est un 'alias'.
 - Un paramètre peut définir une 'valeur par défaut' si et seulement si sa nature est une 'copie'.
 - Un paramètre ne peut pas définir une 'valeur par défaut' s'il s'agit d'un 'alias'.
 
