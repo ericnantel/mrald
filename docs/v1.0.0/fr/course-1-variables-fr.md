@@ -459,7 +459,7 @@ Les copies sont préférables lorsque les variables ne sont pas trop 'lourdes à
 
 ### 1.3. Paramètre
 
-- Un paramètre est une variable d'entrée de 'bloc d'appel'.
+- Un paramètre est une variable d'entrée soit de 'bloc d'appel', 'bloc d'exécution', 'bloc conditionnel' ou 'bloc sélectif'.
 - La nature d'un paramètre est soit un 'alias' ou une 'copie'.
 - La nature d'une paramètre par défaut est un 'alias'.
 - Un paramètre peut définir une 'valeur par défaut' si et seulement si sa nature est une 'copie'.
