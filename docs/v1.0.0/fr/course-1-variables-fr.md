@@ -484,7 +484,7 @@ Nous verrons plus en détail les objets dans un chapitre dédié aux classes et 
 - Une constante doit être définie dans un module.
 - Une constante ne peut pas être définie 'externe'.
 - Une constante est un symbole pouvant être utilisé comme 'valeur primitive'.
-- Le type d'une constante est toujours primitif.
+- Le type d'une constante est toujours primitif ou chaîne de charactères.
 - Le type d'une constante n'est pas personnalisé.
 - Le type d'une constante est facultatif dans sa définition.
 - Le type d'une constante doit correspondre au type d'information. *(1)
