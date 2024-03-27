@@ -28,7 +28,19 @@
 - 1.0.7. [L'identifiant d'une variable](#107-lidentifiant-dune-variable)
 - 1.0.8. [La nature d'une variable](#108-la-nature-dune-variable)
 - 1.0.9. [La visibilité d'une variable](#109-la-visibilité-dune-variable)
-- 1.0.10. [L'addresse d'une variable](#1010-laddresse-dune-variable)
+- 1.0.10. [L'adresse d'une variable](#1010-ladresse-dune-variable)
+
+1.1. [Alias](#11-alias)
+
+1.2. [Copie](#12-copie)
+
+1.3. [Paramètre](#13-paramètre)
+
+1.4. [Retour de bloc d'appel](#14-retour-de-bloc-dappel)
+
+1.5. [Objet](#15-objet)
+
+1.6. [Constante](#16-constante)
 
 ### 1.0. Définition
 Les variables sont des 'boîtes' qui conservent de l'information.
@@ -41,7 +53,7 @@ Toutes variables possèdent les propriétés fondamentales suivantes:
 - Une mutabilité
 - Un identifiant
 - Une nature
-- Une addresse
+- Une adresse
 
 #### 1.0.1. Le type d'une variable
 Le type restreint la variable à ce qu'elle peut contenir comme information.
@@ -406,15 +418,83 @@ Notes importantes:
 
 *(1)Il est **requis** que la variable existe pour être visible
 
-#### 1.0.10. L'addresse d'une variable
+#### 1.0.10. L'adresse d'une variable
 
-L'addresse d'une variable ou d'un objet c'est en quelque sorte son espace de rangement. C'est l'endroit en mémoire qui détient de l'information. Parfois l'information d'une variable est une autre addresse et la valeur de celle-ci peut aussi changer puisqu'elle se trouve dans une variable. Donc l'addresse on ne la connait pas à l'avance, il faut généralement la demander au système d'opération quand on a besoin de beaucoup d'espace. Nous 'empruntons' de l'espace (aka de la mémoire), et celle-ci est limitée sur une machine et quand on 'libère de la mémoire' on dit essentiellement au système d'opération qu'il peut s'en servir pour autre chose. Si on ne fait pas attention à la gestion des addresses (aka la gestion de la mémoire) et qu'on essaie d'accéder à ce qui s'y trouve on risque de causer des crashs, des gels, des comportements inhabituels, voire des dégâts ou bris sur la machine. Yikes..
+L'adresse d'une variable ou d'un objet c'est en quelque sorte son espace de rangement. C'est l'endroit en mémoire qui détient de l'information. Parfois l'information d'une variable est une autre adresse et la valeur de celle-ci peut aussi changer puisqu'elle se trouve dans une variable. Donc l'adresse on ne la connait pas à l'avance, il faut généralement la demander au système d'opération quand on a besoin de beaucoup d'espace. Nous 'empruntons' de l'espace (aka de la mémoire), et celle-ci est limitée sur une machine et quand on 'libère de la mémoire' on dit essentiellement au système d'opération qu'il peut s'en servir pour autre chose. Si on ne fait pas attention à la gestion des adresses (aka la gestion de la mémoire) et qu'on essaie d'accéder à ce qui s'y trouve on risque de causer des crashs, des gels, des comportements inhabituels, voire des dégâts ou bris sur la machine. Yikes..
 
 D'autant plus, les processeurs modernes sont multitaches et possède les capabilités de traiter des opérations en parallèle, avec des 'threads' par exemple, alors il faut aussi ajouter des méchanismes sécuritaires pour éviter que plus d'un *'thread'* puisse *'exécuter une instruction d'écriture'* sur une même *'section critique'* ou qu'on utilise des *'primitives atomiques'* ou des *'instructions vectorielles'* lorsque c'est avantageux.
 
-Pour toutes ces raisons, le standard du language de programmation Mrald **interdit** formellement que le compilateur donne aux 'usagers' accès aux addresses, que ce soit pour des variables, objets, fonctions, etc. Cela doit être encapsulé par le compilateur.
+Pour toutes ces raisons, le standard du language de programmation Mrald **interdit** formellement que le compilateur donne aux 'usagers' accès aux adresses, que ce soit pour des variables, objets, fonctions, etc. Cela doit être encapsulé par le compilateur.
 
-Évidemment, il existe des outils pour le développement qui pourrait en quelques sortes montrer des addresses en temps réel avec du code déassemblé, mais cela est différent que si vous écriviez du code et que vous utilisiez des 'pointeurs'. Les **'pointeurs'** ne sont **pas autorisé** et ne font pas parti du standard du language de programmation Mrald.
+Évidemment, il existe des outils pour le développement qui pourrait en quelques sortes montrer des adresses en temps réel avec du code déassemblé, mais cela est différent que si vous écriviez du code et que vous utilisiez des 'pointeurs'. Les **'pointeurs'** ne sont **pas autorisé** et ne font pas parti du standard du language de programmation Mrald.
+
+### 1.1. Alias
+
+- Un alias est une référence à une variable existante.
+- L'alias se comporte exactement comme n'importe quelle variable.
+- L'alias doit utiliser le même type que la 'variable d'origine'.
+- L'alias peut utiliser un nom différent dans un bloc 'exterieur' au 'bloc natif'.
+- La durée de vie d'un alias fonctionne exactement comme n'importe quelle variable.
+- L'alias ne peut pas rallonger la durée de vie de la 'variable d'origine'.
+- L'information d'un alias est l'information de la 'variable d'origine'.
+- L'alias peut choisir d'être non-mutable même si la 'variable d'origine' est mutable.
+- L'alias ne peut pas choisir d'être mutable si la 'variable d'origine' est non-mutable.
+- L'alias possède un identifiant différent de celui de la 'variable d'origine'.
+- La nature d'un alias doit être défini comme telle.
+- L'alias n'est pas une copie de la 'variable d'origine'.
+- L'adresse de l'alias est différente de celle de la 'variable d'origine'.
+- L'adresse de l'alias contient l'adresse de la 'variable d'origine'.
+
+Les alias sont principalement utilisés comme 'paramètres'.
+
+### 1.2. Copie
+
+- Une copie de variable est une nouvelle variable.
+- Une copie n'est pas un alias.
+- Une copie doit utiliser le même type que la variable qu'elle copie.
+- Une copie doit avoir un type 'copiable' et/ou 'instanciable'.
+
+Les copies sont préférables lorsque les variables ne sont pas trop 'lourdes à copier'.
+
+### 1.3. Paramètre
+
+- Un paramètre est une variable d'entrée de 'bloc d'appel'.
+- La nature d'un paramètre est soit un 'alias' ou une 'copie'.
+- Un paramètre peut définir une 'valeur par défaut' si et seulement si sa nature est une 'copie'.
+- Un paramètre ne peut pas définir une 'valeur par défaut' s'il s'agit d'un 'alias'.
+
+Les paramètres font partis de la 'signature' d'un 'bloc d'appel'.
+
+### 1.4. Retour de bloc d'appel
+
+- Un retour de bloc d'appel est toujours une 'copie' si défini
+
+Parfois le retour d'un bloc d'appel dépend du retour d'un 'autre' bloc d'appel. Quoiqu'il en soit, ce sera toujours une 'copie' de variable, au final, si défini.
+
+### 1.5. Objet
+
+- Un objet est une variable d'un type de classe.
+- Un objet 'peut se comporter différemment' qu'une 'variable ordinaire'.
+
+Nous verrons plus en détail les objets dans un chapitre dédié aux classes et objets.
+
+### 1.6. Constante
+
+- Une constante n'est pas une variable.
+- Une constante doit être définie dans un module.
+- Une constante ne peut pas être définie 'externe'.
+- Une constante est un symbole pouvant être utilisé comme 'valeur primitive'.
+- Le type d'une constante est toujours primitif.
+- Le type d'une constante n'est pas personnalisé.
+- Le type d'une constante est facultatif dans sa définition.
+- Le type d'une constante doit correspondre au type d'information. *(1)
+- Le type d'une constante doit correspondre
+- Il est préférable d'utiliser des constantes plutôt que des 'nombres magiques'.
+- Une constante peut être utilisée comme paramètre si et seulement si le type correspond *(2) et que le paramètre utilise le mot clé **copy** dans sa signature.
+
+*(1) Si la constante ne spécifie pas le type dans sa définition, alors il faut que le type déduit par le compilateur corresponde au type d'information de la variable, 'champ' ou 'membre attribut'.
+
+*(2) Si la constante ne spécifie pas le type dans sa définition, alors il faut que le type déduit par le compilateur corresponde au type du paramètre.
 
 [Précédent](/docs/v1.0.0/fr/hello-world-fr.md) | [Suivant]()
 
