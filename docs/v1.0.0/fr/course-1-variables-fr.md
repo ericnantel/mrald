@@ -433,6 +433,7 @@ Pour toutes ces raisons, le standard du language de programmation Mrald **interd
 - Un alias est une référence à une variable existante.
 - L'alias se comporte exactement comme n'importe quelle variable.
 - L'alias doit utiliser le même type que la 'variable d'origine'.
+- L'alias peut être de type 'abstrait' ou 'polymorphique'.
 - L'alias ne peut pas coexister avec la 'variable d'origine' dans son 'bloc natif' ou ses 'sous-blocs' en portant le même nom.
 - L'alias peut utiliser un nom différent dans un bloc 'exterieur' au 'bloc natif'.
 - La durée de vie d'un alias fonctionne exactement comme n'importe quelle variable.
@@ -454,6 +455,7 @@ Les alias sont principalement utilisés comme 'paramètres'.
 - Une copie n'est pas un alias.
 - Une copie doit utiliser le même type que la variable qu'elle copie.
 - Une copie doit avoir un type 'copiable' et/ou 'instanciable'.
+- Une copie ne peut pas être de type 'abstrait' ou 'polymorphique'.
 
 Les copies sont préférables lorsque les variables ne sont pas trop 'lourdes à copier'.
 
@@ -462,8 +464,12 @@ Les copies sont préférables lorsque les variables ne sont pas trop 'lourdes à
 - Un paramètre est une variable d'entrée soit de 'bloc d'appel', 'bloc d'exécution', 'bloc conditionnel' ou 'bloc sélectif'.
 - La nature d'un paramètre est soit un 'alias' ou une 'copie'.
 - La nature d'une paramètre par défaut est un 'alias'.
-- Un paramètre peut définir une 'valeur par défaut' si et seulement si sa nature est une 'copie'.
-- Un paramètre ne peut pas définir une 'valeur par défaut' s'il s'agit d'un 'alias'.
+- Un paramètre peut définir une 'valeur par défaut' si et seulement si:
+    - Sa nature est une 'copie'.
+    - Son type est primitif ou une énumération.
+- Un paramètre ne peut pas définir une 'valeur par défaut' si:
+    - Sa nature est un 'alias'.
+    - Son type ne peut pas définir de 'valeur par défaut' (données et classes).
 
 Les paramètres font partis de la 'signature' d'un 'bloc d'appel'.
 
@@ -475,8 +481,10 @@ Parfois le retour d'un bloc d'appel dépend du retour d'un 'autre' bloc d'appel.
 
 ### 1.5. Objet
 
-- Un objet est une variable d'un type de classe.
+- Un objet est une 'variable' d'un type de classe.
 - Un objet 'peut se comporter différemment' qu'une 'variable ordinaire'.
+
+*L'objet est l'instance d'une classe.*
 
 Nous verrons plus en détail les objets dans un chapitre dédié aux classes et objets.
 
