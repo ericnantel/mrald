@@ -480,7 +480,7 @@ Si les règles ne sont pas guaranties, le compilateur n'a pas d'autre choix que 
 
 ### 1.3. Paramètre
 
-- Un paramètre est une variable d'entrée soit de 'bloc d'appel', 'bloc de boucle', 'bloc conditionnel' ou 'bloc sélectif'.
+- Un paramètre est une variable d'entrée d'un 'bloc exécutif'.
 - La nature d'un paramètre est soit un 'alias' ou une 'copie'.
 - La nature d'une paramètre par défaut est un 'alias'.
 - Un paramètre peut définir une 'valeur par défaut' si et seulement si:
@@ -490,7 +490,7 @@ Si les règles ne sont pas guaranties, le compilateur n'a pas d'autre choix que 
     - Sa nature est un 'alias'.
     - Son type ne peut pas définir de 'valeur par défaut' (données et classes).
 
-Les paramètres font partis de la 'signature' d'un 'bloc d'appel'.
+*Les paramètres d'un 'bloc d'appel' font partis de sa 'signature'.*
 
 ### 1.4. Retour de bloc d'appel
 
