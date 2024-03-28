@@ -33,6 +33,7 @@
 1.1. [Alias](#11-alias)
 
 1.2. [Copie](#12-copie)
+- 1.2.1. [Copie en profondeur vs copie en surface](#121-copie-en-profondeur-vs-copie-en-surface)
 
 1.3. [Paramètre](#13-paramètre)
 
@@ -459,9 +460,27 @@ Les alias sont principalement utilisés comme 'paramètres'.
 
 Les copies sont préférables lorsque les variables ne sont pas trop 'lourdes à copier'.
 
+#### 1.2.1. Copie en profondeur vs copie en surface
+
+La copie en profondeur c'est quand l'information des 'champs' ou 'membres attributs' est copiée à une nouvelle adresse.
+
+- Les 'champs' ou 'membres attributs' de types primitifs, de données ou énumérations sont toujours copiés en profondeur.
+
+La copie en surface c'est quand l'information des 'champs' ou 'membres attributs' est en fait une adresse qui est copiée à une nouvelle adresse comme information.
+
+- Les 'membres attributs' de type classe peuvent être copiés en surface, si jugé sécuritaire par le language Mrald.
+
+Les copies en surface sont faibles en coût, mais le language Mrald requiert au compilateur des règles strictes pour éviter toutes vulnérabilités dans la gestion de mémoire.
+
+L'objet est toujours propriétaire de ses 'membres attributs'; sauf s'il est jugé sécuritaire de ne pas 'transférer la possession', et donc de procéder à une copie en surface. Mais les règles sont strictes à ce sujet:
+- Le type doit être 'abstrait' ou 'polymorphique' ou 'lourd à copier'.
+- Le propriétaire doit être 'hébergé' pour une 'durée' plus longue que le nouvel objet.
+
+Si les règles ne sont pas guaranties, le compilateur n'a pas d'autre choix que de rendre l'objet 'non-copiable' dans le présent contexte.
+
 ### 1.3. Paramètre
 
-- Un paramètre est une variable d'entrée soit de 'bloc d'appel', 'bloc d'exécution', 'bloc conditionnel' ou 'bloc sélectif'.
+- Un paramètre est une variable d'entrée soit de 'bloc d'appel', 'bloc de boucle', 'bloc conditionnel' ou 'bloc sélectif'.
 - La nature d'un paramètre est soit un 'alias' ou une 'copie'.
 - La nature d'une paramètre par défaut est un 'alias'.
 - Un paramètre peut définir une 'valeur par défaut' si et seulement si:
@@ -505,6 +524,37 @@ Nous verrons plus en détail les objets dans un chapitre dédié aux classes et 
 *(1) Si la constante ne spécifie pas le type dans sa définition, alors il faut que le type déduit par le compilateur corresponde au type d'information de la variable, 'champ' ou 'membre attribut'.
 
 *(2) Si la constante ne spécifie pas le type dans sa définition, alors il faut que le type déduit par le compilateur corresponde au type du paramètre.
+
+### 1.7. Bloc
+
+Les blocs sont un concept très important à comprendre.
+
+- Les blocs ont un début et une fin.
+- Les blocs peuvent contenir du 'code' et/ou des 'déclarations de type' et/ou des 'sous-blocs'.
+- Les blocs 'de déclaration' contiennent les déclarations de type.
+- Les blocs 'de déclaration' ne peuvent pas être des 'sous-blocs'.
+- Les blocs 'exécutifs' contiennent les instructions de votre programme.
+- Les blocs 'exécutifs' peuvent être des 'sous-blocs'.
+
+Les blocs 'exécutifs' sont catégorisés pour des raisons spécifiques:
+- Les blocs d'appel sont des blocs qui peuvent être 'appelés'.
+- Les blocs de boucle sont des blocs qui peuvent se répéter.
+- Les blocs conditionnels sont des blocs qui vérifient une condition d'abord.
+- Les blocs sélectifs sont des blocs qui choississent parmi plusieurs options.
+
+Parmi les mots-clés qui marquent le début d'un bloc de déclaration:
+- **data**.
+- **class**.
+- **enum**.
+
+Parmi les mots-clés qui marquent le début d'un bloc exécutif:
+- **if**.
+- **else**.
+- **switch**.
+
+*Tout bloc se termine avec le mot-clé **end**.
+
+Nous verrons plus en détail les différents blocs dans les prochains chapitres.
 
 [Précédent](/docs/v1.0.0/fr/hello-world-fr.md) | [Suivant]()
 
