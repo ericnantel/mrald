@@ -43,6 +43,8 @@
 
 1.6. [Constante](#16-constante)
 
+1.7. [Bloc](#17-bloc)
+
 ### 1.0. Définition
 Les variables sont des 'boîtes' qui conservent de l'information.
 Toutes variables possèdent les propriétés fondamentales suivantes:
