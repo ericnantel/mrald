@@ -2,16 +2,6 @@
 
 os=$(uname -o)
 
-#echo 
-#echo +===============================+
-#echo + Cleaning Mrald-Craft.. ++++++++
-#echo +===============================+
-#echo 
-
-#rm -d -R ./cli/build
-#rm -d -R ./parser/build
-#rm -d -R ./scanner/build
-
 echo 
 echo +===============================+
 echo + Building Mrald-Craft CLI.. ++++
