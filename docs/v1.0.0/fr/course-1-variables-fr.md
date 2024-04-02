@@ -1,4 +1,5 @@
 ## 2. Cours I - Variables
+---
 
 *Liens rapides*
 
@@ -45,29 +46,325 @@
 
 1.7. [Bloc](#17-bloc)
 
+---
 ### 1.0. Définition
 Les variables sont des 'boîtes' qui conservent de l'information.
+L'information peut varier au besoin en effectuant des opérations sur les variables.
 
-L'information d'une variable peut changer, peut 'varier'.
-Les variables c'est comme l'algèbre en mathématique où vous utilisez 'x' ou 'y'.
+Les variables contiennent plusieurs propriétés fondamentales, outre l'information:
+- Une information
+- Un type
+- Un nom ou alias
+- Une durée de vie
+- Une mutabilité
+- Un identifiant
+- Une nature
+- Une adresse
 
-Concentrons-nous d'abord sur comment déclarer une variable avec un premier exemple tout simple.
+---
+#### 1.0.1. L'information d'une variable
+
+L'information c'est le contenu d'une variable.
+
+Vous pouvez avoir une ou plusieurs valeurs comme information.
+
+---
+#### 1.0.2. Le type d'une variable
+
+Le type c'est le contenant d'une variable.
+
+Le type restreint ce que la variable peut accepter comme information.
+
+---
+#### 1.0.3. Le nom d'une variable
+
+Le nom ou alias c'est l'étiquette d'une variable.
+
+Cela permet de différencier nos variables.
+Les alias sont un nom différent pour désigner une même variable.
+
+---
+#### 1.0.4. La durée de vie d'une variable
+
+La durée de vie permet l'utilisation d'une variable.
+
+Aucune variable n'est globale.
+Toutes les variables sont locales dans leur bloc natif.
+Les variables peuvent utiliser des alias dans des blocs d'appel.
+
+---
+#### 1.0.5. La mutabilité d'une variable
+
+La mutabilité permet qu'une variable change d'information.
+
+Les variables sont mutables par défaut.
+Le mot-clé '**readonly**', lors de la déclaration d'une variable, rend celle-ci immutable par la suite.
+La mutabilité d'une variable ne change plus après sa déclaration.
+La mutabilité d'une variable empèche toute modification de son information.
+Les variables immutables doivent être initialisées lors de leur déclaration.
+
+---
+#### 1.0.6. L'identifiant d'une variable
+
+L'identifiant d'une déclaration de variable est unique.
+
+L'identifiant est encapsulé par le compilateur.
+
+---
+#### 1.0.7. La nature d'une variable
+
+La nature d'une variable nous informe s'il s'agit d'une nouvelle variable, d'un alias ou d'une copie.
+
+La nature est encapsulée par le compilateur.
+
+---
+#### 1.0.8. L'adresse d'une variable
+
+L'adresse est la région en mémoire qui conserve l'information.
+
+L'adresse est encapsulée par le compilateur.
+
+---
+### 1.1 Déclaration
+
+Pour utiliser une variable, celle-ci doit être d'abord déclarée.
+Pour ce faire, vous devez préciser un type et un nom de variable.
+Facultativement, vous pourriez aussi assigner une valeur initiale dans votre déclaration.
 
 :book: Exemple 1.
-- Imaginez que vous avez une petite boîte qui ne peut contenir qu'une seule valeur à la fois. De plus, cette valeur doit être un entier. Et vous aimeriez qu'elle contienne le chiffre 7. Voici comment vous pourriez déclarer une telle variable en language Mrald:
+- Déclarons quelques variables ci-dessous avec des valeurs initiales:
     ```mrald
-        int chiffre = 7
+        int chiffre = 5
+        float humidite = 70.4
+        boolean transparent = false
     ```
 
-C'est assez simple, non?
+Dans l'exemple ci-haut:
+- 'int', 'float' et 'boolean' sont des types de variable.
+- 'chiffre', 'humidite', 'transparent' sont des noms de variable.
+- '5', '70.4' et 'false' sont des valeurs initiales.
 
-Essayons maintenant avec un deuxième exemple.
+:star: Point très important à retenir:
+- Les valeurs sont désormais l'information des variables.
 
+Vous pouvez aussi utilisez une variable pour initialiser une autre variable.
 :book: Exemple 2.
-- Cette fois-ci nous aimerions une variable qui peut contenir des nombres à virgule. Essayons avec la valeur 120.5:
+- Déclarons quelques variables ci-dessous:
     ```mrald
-        float poids = 120.5
+        int chiffre1 = 5
+        int chiffre2 = chiffre1
     ```
+
+Dans l'exemple ci-haut:
+- 'chiffre1' et 'chiffre2' ont chacune la valeur 5 comme information.
+
+---
+### 1.2. Modification
+
+Vous pouvez assigner une nouvelle valeur comme information.
+Assurez-vous que les modifications se fassent après la déclaration de la variable.
+
+:book: Exemple 3.
+- Déclarons quelques variables et modifions-les ci-dessous:
+    ```mrald
+        int temperature = 30
+        temperature = 32
+
+        float pression = 1.02
+        pression = 1.00
+    ```
+---
+### 1.3. Opération
+
+Vous pouvez aussi utiliser des opérateurs d'arithmétiques pour modifier l'information d'une variable.
+
+:book: Exemple 4.
+- Utilisons les opérateurs +,-,* et / ci-dessous:
+    ```mrald
+        int temperature = 30 + 1
+        
+        float pression = 1.02 - 0.01
+    ```
+
+Aussi en combinant des valeurs et des variables.
+:book: Exemple 5.
+- Utilisons les opérateurs +,-,* et / ci-dessous:
+    ```mrald
+        float ebullition_celsius = 100.00
+        float ebullition_fahrenheit = 1.8 * ebullition_celsius + 32.0
+    ```
+
+:star: Point très important à retenir:
+- Les opérations qui se trouve à la droite du '=' sont d'abord effectuées puis le résultat sera utilisée comme information.
+
+Le symbole '=' est en fait un opérateur d'assignation. Son rôle est de 'copier' se qui se trouve à la droite vers la variable qui se trouve à la gauche, tout simplement.
+
+Voyons maintenant quelques opérateurs d'arithmétiques combinés avec l'opérateur d'assignement '='.
+:book: Exemple 6.
+- Utilisons les opérateurs combinés +=, -=, *=, /= ci-dessous:
+    ```mrald
+        float ebullition_celsius = 100.00
+        float ebullition_fahrenheit = ebullition_celsius
+        ebullition_fahrenheit *= 1.8
+        ebullition_fahrenheit += 32.0
+    ```
+
+Nous aurions pu écrire l'exemple ci-haut de la manière suivante:
+- Équivalent de l'exemple 6 sans l'utilisation d'opérateurs combinés:
+    ```mrald
+        float ebullition_celsius = 100.00
+        float ebullition_fahrenheit = ebullition_celsius
+        ebullition_fahrenheit = ebullition_fahrenheit * 1.8
+        ebullition_fahrenheit = ebullition_fahrenheit + 32.0
+    ```
+Comme vous pouvez le constater les opérateurs combinés peuvent rendre le code plus lisible parfois.
+
+Voyons aussi les opérateurs d'incrémentation '++' et de décrémentation '--'.
+Ceux-ci incrémentent ou décrémentent la variable par 1.
+
+:book: Exemple 7.
+- Utilisons les opérateurs '++, --' ci-dessous:
+    ```mrald
+        int version = 0
+        version++
+
+        int nombre_eleves = 30
+        nombre_eleves--
+    ```
+
+Nous aurions pu écrire l'exemple ci-haut de la manière suivante:
+- Équivalent de l'exemple 7 sans l'utilisation des opérateurs '++, --':
+    ```mrald
+        int version = 0
+        version = version + 1
+
+        int nombre_eleves = 30
+        nombre_eleves = nombre_eleves - 1
+    ```
+
+:star: Point très important à retenir:
+- Ces opérateurs '++, --' sont limités à certains types de variable.
+
+---
+:school: *Veuillez compléter les exercices 1 à 10.*
+
+---
+### 1.4. Comparaison
+
+Les opérateurs de comparaison '==' et non-comparaison '!=' utilisent deux valeurs et/ou variables, de même type, et retourne un résultat binaire.
+
+Voyons comment savoir si deux 'opérandes' sont identiques ou différentes.
+:book: Exemple 8.
+- Utilisons les opérateurs '==' et '!=' pour comparer deux variables a et b:
+    ```mrald
+        int a = 10
+        int b = 12
+        boolean identique = a == b
+        boolean different = a != b
+    ```
+---
+### 1.4. Inversion
+
+L'opérateur d'inversion '!' retourne un résultat binaire inverse.
+
+:book: Exemple 9.
+- Prenons une variable binaire f et utilisons l'opérateur d'inversion '!':
+    ```mrald
+        boolean f = true
+        f = !f
+    ```
+---
+### 1.5. Déduction
+
+La déduction de type permet de combiner valeurs et variables dans les opérations.
+Le résultat des opérations doit avoir le même type que la variable à assigner.
+
+---
+### 1.6. Conversion
+
+Jusqu'à présent nous avons vu les modifications et opérations de variables sans avoir eu recours à des conversions de type. Parfois nous avons besoin de 'changer de boîte'. Comme il n'est pas possible de changer le type d'une variable, il faudra convertir une information et copier le résultat dans une autre variable avec le type correspondant. Dans certains cas, cela peut causer des pertes de précision dans l'information.
+
+Vous devez utiliser l'opérateur de conversion '**as**' pour convertir un type en un autre.
+
+:book: Exemple 10.
+- Convertir la variable taille en entier:
+    ```mrald
+        float taille = 1.80
+        int nombre_metre = taille as int
+    ```
+
+Dans l'exemple ci-haut, l'opérateur 'as' va convertir l'information 'flottante' en 'entier' ce qui enlevera la partie fractionnelle et donc la variable 'nombre_metre' ne contiendra que la valeur 1.
+
+:star: Point très important à retenir:
+- Seuls les types 'compatibles' peuvent être converti et vice-versa.
+
+---
+:school: *Veuillez compléter les exercices 11 à 20.*
+
+---
+### 1.7. Primitifs vs Personnalisés
+
+Nous avons déjà vu trois types de variables:
+- 'int' est un type primitif intégral signé
+- 'float' est un type primitif flottant simple précision
+- 'boolean' est un type binaire
+
+Ces types sont définis par le language Mrald, ainsi que les opérateurs d'arithmétiques, comparaison, conversion, etc.
+Les types primitifs sont séparés en trois catégories:
+- Les types primitifs intégraux (peuvent représenter que des valeurs entières)
+- Les types primitifs flottants (peuvent représenter des valeurs avec part fractionnelle)
+- Les types primitifs binaires (peuvent représenter que 'true' ou 'false')
+
+Certains types sont signés, c'est-à-dire qu'un de leur 'bit' contient le 'signe' de la valeur.
+Par conséquent, les types non-signés ne peuvent pas représenter de valeur négative.
+
+Les types primitifs non-binaires ont un domaine de valeur qui est limité par leur nombre de bits essentiellement.
+Par exemple, un 'uint8' peut contenir les valeurs entières de 0 à 255 inclus.
+
+:star: Point très important à retenir:
+- Si un résultat est trop petit ou grand pour un type, l'information risque de ne pas être préservée.
+
+Voici des tableaux plus approfondis sur les types primitifs:
+- Les types intégraux:
+
+| Type 		| Catégorie     | Signé		| Bits  | Octets| Défaut    | Valeur Minimale 				| Valeur Maximale 				| Valeurs possibles 			|
+| --------- | ------------- | --------- | ----- | ------| --------- | ----------------------------- | ----------------------------- | ----------------------------- |
+|	char	|   Intégral    |	Oui		|   8   |   1   |   '\0'    |	-128						|	+127						|	256							|
+|	short	|   Intégral    |	Oui		|   16  |   2   |     0     |	-32,768 					|	+32,767						|	65,536						|
+|	int		|   Intégral    |	Oui		|   32  |   4   |     0     |	-2,147,483,648				|	+-2,147,483,647				|	4,294,967,296				|
+|	long	|   Intégral    |	Oui		|   64  |   8   |     0     |	-9,223,372,036,854,775,808	|	+9,223,372,036,854,775,807	|	18,446,744,073,709,551,616	|
+|	int8	|   Intégral    |	Oui		|   8   |   1   |     0     |	-128						|	+127						|	256							|
+|	int16	|   Intégral    |	Oui		|   16  |   2   |     0     |	-32,768						|	+32,767						|	65,536						|
+|	int32	|   Intégral    |	Oui		|   32  |   4   |     0     |	-2,147,483,648				|	+2,147,483,647				|	4,294,967,296				|
+|	int64	|   Intégral    |	Oui		|   64  |   8   |     0     |	-9,223,372,036,854,775,808	|	+9,223,372,036,854,775,807	|	18,446,744,073,709,551,616	|
+|	byte	|   Intégral    |	Non		|   8   |   1   |     0     |	0							|	+255						|	256							|
+|	ushort	|   Intégral    |	Non		|   16  |   2   |     0     |	0							|	+65,535						|	65,536						|
+|	uint	|   Intégral    |	Non		|   32  |   4   |     0     |	0							|	+4,294,967,295				|	4,294,967,296				|
+|	ulong	|   Intégral    |	Non		|   64  |   8   |     0     |	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
+|	uint8	|   Intégral    |	Non		|   8   |   1   |     0     |	0							|	+255						|	256							|
+|	uint16	|   Intégral    |	Non		|   16  |   2   |     0     |	0							|	+65,535						|	65,536						|
+|	uint32	|   Intégral    |	Non		|   32  |   4   |     0     |	0							|	+4,294,967,295				|	4,294,967,296				|
+|	uint64	|   Intégral    |	Non		|   64  |   8   |     0     |	0							|	+18,446,744,073,709,551,615	|	18,446,744,073,709,551,616	|
+
+- Les types flottants:
+
+| Type 		| Catégorie     | Signé		| Bits  | Octets| Défaut    | Valeur Minimale 				| Valeur Maximale 				| Nombre de chiffres 			|
+| --------- | ------------- | --------- | ----- | ----- | --------- | ----------------------------- | ----------------------------- | ----------------------------- |
+|   float   |   Flottant    |   Oui     |   32  |   4   |   0.0     |   ~ -3.4x10e38                |   ~ +3.4x10e38                |   7                           |
+|   f32     |   Flottant    |   Oui     |   32  |   4   |   0.0     |   ~ -3.4x10e38                |   ~ +3.4x10e38                |   7                           |
+|   double  |   Flottant    |   Oui     |   64  |   8   |   0.0     |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
+|   f64     |   Flottant    |   Oui     |   64  |   8   |   0.0     |   ~ -1.7x10e308               |   ~ +1.7x10e308               |   15                          |
+
+- Les types binaires:
+
+| Type      | Catégorie     | Signé     | Bits  | Octets| Défaut    | Valeurs possibles     |
+| --------- | ------------- | --------- | ----- | ----- | --------- | --------------------- |
+|   boolean |   Binaire     |   Non     |   32  |   4   |   false   |   true, false         |
+
+---
+:school: *Veuillez compléter les exercices 21 à 25.*
+
+---
 
 :star: Point très important à retenir:
 - La déclaration de la variable doit être écrite avant que l'on puisse l'utiliser. Ce n'est pas possible d'utiliser une variable qui n'existe pas.
@@ -314,6 +611,8 @@ Nous allons voir comment utiliser cet opérateur.
 
 Dans l'exemple ci-haut la variable v contient désormais la valeur 3. Vous auriez eu une erreur si vous n'aviez pas utilisé l'opérateur de conversion 'as', puisque la variable v de type 'int' ne peut pas recevoir une valeur de type qui n'est pas 'int'.
 
+:school: Vous pouvez maintenant faire les exercices 16 à 20.
+
 Jusqu'à présent nous avons vu trois types de variable:
 - 'int'
 - 'float'
@@ -325,15 +624,16 @@ Et les opérateurs suivants:
 - '==, !, !='
 - 'as'
 
-Ces types et opérateurs sont dits 'primitifs'. C'est-à-dire que ceux-ci sont définis par défaut par le language Mrald. Nous allons voir qu'il existe une autre catégorie de type de variable et d'opérateur: les types **personnalisés** ainsi que les **surcharges d'opérateurs**.
+Ces types sont dits 'primitifs'. C'est-à-dire que ceux-ci sont définis par défaut par le language Mrald, ainsi que leurs opérations arithmétiques et/ou binaires. Nous allons voir qu'il existe une autre catégorie de type de variable: les types **personnalisés** ainsi que les **surcharges d'opérateurs**.
 
 Le language Mrald catégorise les types de variable en deux catégories:
 - Les types primitifs
 - Les types personnalisés
 
-Les opérateurs toutefois utilisent les mêmes 'symboles', mais il est possible de les 'surcharger' pour 'personnaliser' une opération arithmétique ou binaire.
+Les opérateurs toutefois utilisent les mêmes 'symboles', mais il est possible de les 'surcharger' pour 'personnaliser' une opération arithmétique ou binaire sur un type en particulier.
 
-:star: Point très important à retenir:
+:star: Points très importants à retenir:
+- Une surcharge d'opérateur ne peut pas effacer une définition existante.
 - L'opérateur de conversion 'as' ne peut pas être surchargé, sauf par le compilateur.
 
 Dans le language Mrald, toute variable possède les propriétés fondamentales suivantes:
