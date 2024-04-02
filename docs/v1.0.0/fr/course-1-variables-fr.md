@@ -265,16 +265,76 @@ Dans l'exemple précédent, la variable d contient la valeur 'false'.
 :star: Point très important à retenir:
 - L'opérateur de comparaison '==' doit évaluer deux valeurs de même type.
 
+Il existe deux autres opérateurs qui retournent une valeur binaire, soit '!' et '!='. L'opérateur d'inversion '!' retourne la valeur inverse d'une opération ou variable binaire.
+
+Voici un exemple qui déclare un booléen avec l'opérateur d'inversion '!'.
+
+:book: Exemple 12.
+- Utilisons l'opérateur d'inversion '!' pour déclarer une variable v avec une valeur initiale puis inverser sa valeur.
+    ```mrald
+        boolean v = true
+        v = !v
+    ```
+
+Dans l'exemple ci-haut la variable v est d'abord initialisée avec la valeur 'true' puis assignée avec l'inverse de v, donc v a finalement une valeur 'false'.
+
+L'opérateur de non-comparaison '!=' retourne l'inverse de l'opérateur de comparaison '=='. Il est utilisé pour comparer si deux variables ou résultats sont différents.
+
+:book: Exemple 13.
+- Utilisons l'opérateur '!=' pour vérifier si deux variables a et b sont différentes.
+    ```mrald
+        int a = 5
+        int b = 12
+        boolean resultat = a != b
+    ```
+
+Dans l'exemple ci-haut, si la variable resultat est 'true' c'est que les variables a et b sont différentes; 'false' si elles sont égales.
+
+:star: Point très important à retenir:
+- Utilisez les opérateurs d'arithmétiques pour retourner un résultat numérique; sinon les opérateurs de comparaison, non-comparaison ou inverse pour retourner un résultat binaire.
+
 :bulb: Félicitation! Vous avez bien progressé dans le cour.
 Prenez une pause au besoin.
 
 :school: Vous pouvez maintenant faire les exercices 1 à 15.
 
-TODO..
+Il existe un dernier opérateur spécial qui utilise un mot-clé plutôt qu'un symbole.
+Il s'agit de l'opérateur de conversion '**as**'.
 
-Revenons sur le type des variables. Le language Mrald sépare les types en deux catégories:
+Cet opérateur est particulier, puisqu'il convertit un résultat numérique ou une variable en un autre type.
+
+Nous allons voir comment utiliser cet opérateur.
+
+:book: Exemple 14.
+- Utilisons l'opérateur de conversion 'as' pour transformer une variable u de type 'float' en type 'int' avec une variable v.
+    ```mrald
+        float u = 3.13339
+        int v = u as int
+    ```
+
+Dans l'exemple ci-haut la variable v contient désormais la valeur 3. Vous auriez eu une erreur si vous n'aviez pas utilisé l'opérateur de conversion 'as', puisque la variable v de type 'int' ne peut pas recevoir une valeur de type qui n'est pas 'int'.
+
+Jusqu'à présent nous avons vu trois types de variable:
+- 'int'
+- 'float'
+- 'boolean'
+
+Et les opérateurs suivants:
+- '+, -, *, /'
+- '+=, -=, *=, /='
+- '==, !, !='
+- 'as'
+
+Ces types et opérateurs sont dits 'primitifs'. C'est-à-dire que ceux-ci sont définis par défaut par le language Mrald. Nous allons voir qu'il existe une autre catégorie de type de variable et d'opérateur: les types **personnalisés** ainsi que les **surcharges d'opérateurs**.
+
+Le language Mrald catégorise les types de variable en deux catégories:
 - Les types primitifs
 - Les types personnalisés
+
+Les opérateurs toutefois utilisent les mêmes 'symboles', mais il est possible de les 'surcharger' pour 'personnaliser' une opération arithmétique ou binaire.
+
+:star: Point très important à retenir:
+- L'opérateur de conversion 'as' ne peut pas être surchargé, sauf par le compilateur.
 
 Dans le language Mrald, toute variable possède les propriétés fondamentales suivantes:
 - Un type
