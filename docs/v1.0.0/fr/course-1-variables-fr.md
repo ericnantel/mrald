@@ -3,6 +3,7 @@
 
 ---
 ### 1.0. Définition
+
 Les variables sont des 'boîtes' qui conservent de l'information.
 L'information peut varier au besoin en effectuant des opérations sur les variables.
 
