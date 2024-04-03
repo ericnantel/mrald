@@ -315,7 +315,7 @@ Les types primitifs sont séparés en trois catégories:
 - Les types primitifs flottants (peuvent représenter des valeurs avec part fractionnelle)
 - Les types primitifs binaires (peuvent représenter que 'true' ou 'false')
 
-Certains types sont signés, c'est-à-dire qu'un de leur 'bit' contient le 'signe' de la valeur.
+Certains types sont signés, c'est-à-dire qu'un de leur dernier 'bit' contient le 'signe' de la valeur.
 Par conséquent, les types non-signés ne peuvent pas représenter de valeur négative.
 
 Les types primitifs non-binaires ont un domaine de valeur qui est limité par leur nombre de bits essentiellement.
@@ -325,6 +325,7 @@ Par exemple, un 'uint8' peut contenir les valeurs entières de 0 à 255 inclus.
 - Si un résultat est trop petit ou grand pour un type, l'information risque de ne pas être préservée.
 
 Voici des tableaux plus approfondis sur les types primitifs:
+
 - Les types intégraux:
 
 | Type 		| Catégorie     | Signé		| Bits  | Octets| Défaut    | Valeur Minimale 				| Valeur Maximale 				| Valeurs possibles 			|
@@ -361,257 +362,20 @@ Voici des tableaux plus approfondis sur les types primitifs:
 | --------- | ------------- | --------- | ----- | ----- | --------- | --------------------- |
 |   boolean |   Binaire     |   Non     |   32  |   4   |   false   |   true, false         |
 
+Le language Mrald permet la création de nouveaux types, ainsi que la surcharge de la plupart des opérateurs.
+Ces types sont dits personnalisés, puisque ce sont les usagers qui les créer.
+Les types personnalisés sont séparés en trois catégories:
+- Les types de données
+- Les types d'énumérations
+- Les types de classes
+
+TOCOMPLETE..
+
 ---
 :school: *Veuillez compléter les exercices 21 à 25.*
 
 ---
 
-:star: Point très important à retenir:
-- La déclaration de la variable doit être écrite avant que l'on puisse l'utiliser. Ce n'est pas possible d'utiliser une variable qui n'existe pas.
-
-Si vous relisez la première phrase de ce chapitre, les variables sont comme des 'boîtes' qui contiennent de l'information. Dans les deux précédents exemples, nos variables contenaient des valeurs numériques. La première variable avait une valeur entière; la deuxième plutôt une valeur à virgule.
-
-Mais pourquoi dans le premier exemple ce n'était pas une valeur à virgule? La réponse c'est à cause que le 'type de boîte' était différent que celui du deuxième exemple.
-
-Les mots 'int' et 'float' sont des **types** de variable.
-- int c'est une abbréviation de 'integer' (entier).
-- float c'est une abbréviation de 'floating point' (point flottant).
-
-Donc si vous voulez utilisez une variable pour un nombre entier, 'int' est un type valide; 'float' est un type valide si vous avez un nombre à virgule. En fait, il existe plusieurs types déjà définis par le language Mrald. Nous n'en voyons que deux dans ce chapitre pour le moment.
-
-:star: Point très important à retenir:
-- Vous ne pouvez pas changer le type d'une variable, une fois déclarée
-
-Le mot qui se trouve entre le 'type' et le symbole '=' dans la déclaration d'une variable, c'est le 'nom de la variable'.
-
-:star: Point très important à retenir:
-- La déclaration de la variable doit contenir le type et le nom de la variable.
-
-Le nom de la variable est très important, parce que c'est avec le nom que vous pourrez utiliser la variable par la suite.
-
-Voyons maintenant dans un troisième exemple plusieurs déclarations de variable.
-
-:book: Exemple 3.
-- Nous voulons utiliser deux variables pour deux nombres entiers 5 et 24:
-    ```mrald
-        int chiffre1 = 5
-        int chiffre2 = 24
-    ```
-
-Dans l'exemple ci-haut nous venons de déclarer deux variables différentes qui portent le même type, mais ont un 'nom' différent.
-
-:star: Point très important à retenir:
-- Vous ne pouvez pas redéclarer le même nom de variable, même si le type est différent.
-
-Puis nous avons le symbole '=', après le nom, qui est utilisé dans nos déclarations de variable pour 'assigner' une valeur. C'est un 'opérateur d'assignation'.
-
-Mais est-ce qu'il existe une autre façon de placer une valeur dans une variable? La réponse est oui: vous pouvez le faire avec une autre variable.
-
-Regardons l'exemple suivant:
-
-:book: Exemple 4.
-- Nous voulons deux variables, soit x et y de type entier qui ont la même valeur 3:
-    ```mrald
-        int x = 3
-        int y = 3
-    ```
-
-Ces déclarations sont tout à fait valides, mais nous pouvons faire encore mieux. Comme en algèbre, nous pouvons utiliser une variable pour initialiser une autre variable.
-
-Voyons maintenant l'exemple suivant:
-
-:book: Exemple 5.
-- Nous voulons deux variables, soit x et y de type entier. x doit avoir une valeur 3 et y doit prendre aussi la valeur de x.
-    ```mrald
-        int x = 3
-        int y = x
-    ```
-
-Et voilà!
-
-Quand nous avons fait nos déclarations dans l'exemple ci-haut, nous avons utilisé l'opérateur '=', mais vous pouvez aussi utiliser cet opérateur après avoir déclaré votre variable.
-
-Voyons dans cet exemple comment.
-
-:book: Exemple 6.
-- Nous voulons deux variables a et b de type entier. La première variable a doit être initialisée avec le nombre 48; la deuxième variable b doit prendre la même valeur que a, mais ensuite remplacer sa valeur par 18.
-    ```mrald
-        int a = 48
-        int b = a
-        b = 18
-    ```
-
-:star: Point très important à retenir:
-- Vous pouvez utiliser l'opérateur d'assignation après la déclaration de la variable.
-
-Super, je sens que vous êtes prêt pour les 'opérateurs d'arithmétiques'.
-
-Le language Mrald supporte aussi les opérateurs suivants pour les variables:
-- '+' pour les additions
-- '-' pour les soustractions
-- '*' pour les multiplications
-- '/' pour les divisions
-
-Regardons l'exemple suivant:
-
-:book: Exemple 7.
-- Nous voulons deux variables x et y. La variable x est initialisée avec la valeur 3.5; y doit avoir une valeur égale à 4 fois la valeur de x.
-    ```mrald
-        float x = 3.5
-        float y = x * 4.0
-    ```
-
-Analysons le précédent exemple ensemble.
-- Nous avons utilisé le type 'float' pour notre variable 'x' parce que la valeur 3.5 est un nombre à virgule.
-- Nous avons utilisé l'opérateur de multiplication '*' pour multiplier la valeur de 'x' par 4.0.
-- Nous avons utilisé l'opérateur d'assignement '=' pour placer le 'résultat' de la multiplication dans la variable y, en même temps que sa déclaration.
-
-:star: Point très important à retenir:
-- Ça aurait été une erreur de d'utiliser le type 'int' pour la variable 'y' dans l'exemple précédent, parce que le résultat de la multiplication n'était pas 7 mais plutôt 7.0.
-
-Le language Mrald supporte aussi les opérateurs combinés suivants pour les variables:
-- '+=' pour additionner et assigner.
-- '-=' pour soustraire et assigner.
-- '*=' pour multiplier et assigner.
-- '/=' pour diviser et assigner.
-
-Ces opérateurs combinés permettent de faire deux opérations en même temps.
-
-:star: Point très important à retenir:
-- Les opérateurs combinés lisent d'abord la valeur de la variable à la gauche, puis effectue une opération d'arithmétie à la droite et finalement assignent le résultat à la variable à la gauche.
-
-Voici un exemple.
-
-:book: Exemple 8.
-- Écrivons deux variables a et b de type entier. La première variable a est initialisée avec la valeur 4. La variable b doit utiliser l'opérateur combiné '+=' pour obtenir une valeur de 'a plus 6'.
-    ```mrald
-        int a = 4
-        int b = a
-        b += 6
-    ```
-
-Dans l'exemple ci-haut, nous aurions pu écrire aussi:
-- Soit:
-    ```mrald
-        int a = 4
-        int b = a
-        b = b + 6
-    ```
-- Ou:
-    ```mrald
-        int a = 4
-        int b = a + 6
-    ```
-
-Le language Mrald supporte aussi deux autres opérateurs pour vos opérations:
-- '++' pour incrémenter de 1 (identique à += 1)
-- '--' pour décrémenter de 1 (identique à -= 1)
-
-:star: Point très important à retenir:
-- Les opérateurs d'incrementation '++' et de décrémentation '--' lisent d'abord la valeur de la variable à gauche, puis effectue soit une opération d'addition ou de soustraction par 1 à la droite et finalement assigne le résultat à la variable à la gauche.
-
-:book: Exemple 9.
-- Utilisons les opérateurs '++' et '--' pour manipuler une variable x initialisée avec la valeur 36 et incrémentée par 1 puis décrémentée par 1 pour finalement avoir de nouveau une valeur de 36.
-    ```mrald
-        int x = 36
-        x++
-        x--
-    ```
-
-Dans l'exemple ci-haut, nous aurions pu écrire aussi:
-- Soit:
-    ```mrald
-        int x = 36
-        x += 1
-        x -= 1
-    ```
-- Ou:
-    ```mrald
-        int x = 36
-        x = x + 1
-        x = x - 1
-    ```
-
-:star: Point très important à retenir:
-- Vous pouvez effectuer plusieurs opérations d'arithmétiques en même temps pour assigner une variable, mais vous ne pouvez pas combiner les opérateurs '+, -, *, /, +=, -=, *=, /=' avec les opérateurs '++, --'.
-
-Il existe aussi un opérateur de comparaison '==' qui lui retourne une valeur binaire, soit true (vrai) ou false (faux). Le type 'boolean' (booléen) existe dans le language Mrald. Ce type ne peut que contenir de deux valeurs possibles (true, false).
-
-Voici un exemple qui déclare un booléen en comparant deux variables de même type.
-
-:book: Exemple 10.
-- Comparons si les variables a et b sont identiques et mettons le résultat binaire dans la variable c de type booléen.
-    ```mrald
-        float a = 3.14
-        float b = 3.14
-        boolean c = a == b
-    ```
-Dans l'exemple ci-haut, la variable c contient la valeur 'true'.
-
-Voici un autre exemple qui déclare un booléen en comparant une variable et une valeur de même type.
-
-:book: Exemple 11.
-- Comparons si la variable a et la valeur 4 sont identiques et mettons le résultat binaire dans la variable c de type booléen.
-    ```mrald
-        float a = 3.14
-        boolean c = a == 4
-    ```
-
-Dans l'exemple précédent, la variable d contient la valeur 'false'.
-
-:star: Point très important à retenir:
-- L'opérateur de comparaison '==' doit évaluer deux valeurs de même type.
-
-Il existe deux autres opérateurs qui retournent une valeur binaire, soit '!' et '!='. L'opérateur d'inversion '!' retourne la valeur inverse d'une opération ou variable binaire.
-
-Voici un exemple qui déclare un booléen avec l'opérateur d'inversion '!'.
-
-:book: Exemple 12.
-- Utilisons l'opérateur d'inversion '!' pour déclarer une variable v avec une valeur initiale puis inverser sa valeur.
-    ```mrald
-        boolean v = true
-        v = !v
-    ```
-
-Dans l'exemple ci-haut la variable v est d'abord initialisée avec la valeur 'true' puis assignée avec l'inverse de v, donc v a finalement une valeur 'false'.
-
-L'opérateur de non-comparaison '!=' retourne l'inverse de l'opérateur de comparaison '=='. Il est utilisé pour comparer si deux variables ou résultats sont différents.
-
-:book: Exemple 13.
-- Utilisons l'opérateur '!=' pour vérifier si deux variables a et b sont différentes.
-    ```mrald
-        int a = 5
-        int b = 12
-        boolean resultat = a != b
-    ```
-
-Dans l'exemple ci-haut, si la variable resultat est 'true' c'est que les variables a et b sont différentes; 'false' si elles sont égales.
-
-:star: Point très important à retenir:
-- Utilisez les opérateurs d'arithmétiques pour retourner un résultat numérique; sinon les opérateurs de comparaison, non-comparaison ou inverse pour retourner un résultat binaire.
-
-:bulb: Félicitation! Vous avez bien progressé dans le cour.
-Prenez une pause au besoin.
-
-:school: Vous pouvez maintenant faire les exercices 1 à 15.
-
-Il existe un dernier opérateur spécial qui utilise un mot-clé plutôt qu'un symbole.
-Il s'agit de l'opérateur de conversion '**as**'.
-
-Cet opérateur est particulier, puisqu'il convertit un résultat numérique ou une variable en un autre type.
-
-Nous allons voir comment utiliser cet opérateur.
-
-:book: Exemple 14.
-- Utilisons l'opérateur de conversion 'as' pour transformer une variable u de type 'float' en type 'int' avec une variable v.
-    ```mrald
-        float u = 3.13339
-        int v = u as int
-    ```
-
-Dans l'exemple ci-haut la variable v contient désormais la valeur 3. Vous auriez eu une erreur si vous n'aviez pas utilisé l'opérateur de conversion 'as', puisque la variable v de type 'int' ne peut pas recevoir une valeur de type qui n'est pas 'int'.
-
-:school: Vous pouvez maintenant faire les exercices 16 à 20.
 
 Jusqu'à présent nous avons vu trois types de variable:
 - 'int'
