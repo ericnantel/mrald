@@ -1,51 +1,6 @@
 ## 2. Cours I - Variables
 ---
 
-*Liens rapides*
-
-1.0. [Définition](#10-définition)
-- 1.0.1. [Le type d'une variable](#101-le-type-dune-variable)
-    - 1.0.1.1 [Les types primitifs](#1011-les-types-primitifs)
-        - 1.0.1.1.1. [Les intégrales](#10111-les-intégrales)
-        - 1.0.1.1.2. [Les flottantes](#10112-les-flottantes)
-        - 1.0.1.1.3. [Les binaires](#10113-les-binaires)
-    - 1.0.1.2. [Les types personnalisés](#1012-les-types-personnalisés)
-        - 1.0.1.2.1. [Les données](#10121-les-données)
-        - 1.0.1.2.2. [Les énumérations](#10122-les-énumérations)
-        - 1.0.1.2.3. [Les classes](#10123-les-classes)
-- 1.0.2. [La taille d'une variable](#102-la-taille-dune-variable)
-    - 1.0.2.1. [La taille des types primitifs](#1021-la-taille-des-types-primitifs)
-        - 1.0.2.1.1. [La taille des intégrales](#10211-la-taille-des-intégrales)
-        - 1.0.2.1.2. [La taille des flottantes](#10212-la-taille-des-flottantes)
-        - 1.0.2.1.3. [La taille des binaires](#10213-la-taille-des-binaires)
-    - 1.0.2.2. [La taille des types personnalisés](#1022-la-taille-des-types-personnalisés)
-        - 1.0.2.2.1. [La taille des données](#10221-la-taille-des-données)
-        - 1.0.2.2.2. [La taille des énumérations](#10222-la-taille-des-énumérations)
-        - 1.0.2.2.3. [La taille des classes et des objets](#10223-la-taille-des-classes-et-des-objets)
-- 1.0.3. [Le nom ou alias d'une variable](#103-le-nom-ou-alias-dune-variable)
-- 1.0.4. [La durée de vie d'une variable](#104-la-durée-de-vie-dune-variable)
-- 1.0.5. [L'information d'une variable](#105-linformation-dune-variable)
-- 1.0.6. [La mutabilité d'une variable](#106-la-mutabilité-dune-variable)
-- 1.0.7. [L'identifiant d'une variable](#107-lidentifiant-dune-variable)
-- 1.0.8. [La nature d'une variable](#108-la-nature-dune-variable)
-- 1.0.9. [La visibilité d'une variable](#109-la-visibilité-dune-variable)
-- 1.0.10. [L'adresse d'une variable](#1010-ladresse-dune-variable)
-
-1.1. [Alias](#11-alias)
-
-1.2. [Copie](#12-copie)
-- 1.2.1. [Copie en profondeur vs copie en surface](#121-copie-en-profondeur-vs-copie-en-surface)
-
-1.3. [Paramètre](#13-paramètre)
-
-1.4. [Retour de bloc d'appel](#14-retour-de-bloc-dappel)
-
-1.5. [Objet](#15-objet)
-
-1.6. [Constante](#16-constante)
-
-1.7. [Bloc](#17-bloc)
-
 ---
 ### 1.0. Définition
 Les variables sont des 'boîtes' qui conservent de l'information.
@@ -871,7 +826,7 @@ Parmi les mots-clés qui marquent le début d'un bloc exécutif:
 
 Nous verrons plus en détail les différents blocs dans les prochains chapitres.
 
-[Précédent](/docs/v1.0.0/fr/hello-world-fr.md) | [Suivant]()
+[Précédent](/docs/v1.0.0/fr/hello-world-fr.md) | [Suivant](/docs/v1.0.0/fr/course-2-data-and-enums-fr.md)
 
 [Retour vers Table des Matières](/docs/v1.0.0/fr/toc-fr.md)
 [Haut](#2-cours-i---variables)

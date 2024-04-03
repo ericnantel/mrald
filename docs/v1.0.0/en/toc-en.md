@@ -7,7 +7,7 @@
 0. [Foreword](/docs/v1.0.0/en/preface-en.md)
 1. [Hello world](/docs/v1.0.0/en/hello-world-en.md)
 2. [Course I - Variables](/docs/v1.0.0/en/course-1-variables-en.md)
-3. [Course II - Data and Enums]()
+3. [Course II - Data and Enums](/docs/v1.0.0/en/course-2-data-and-enums-en.md)
 4. [Course III - Loops]()
 5. [Course IV - Functions]()
 6. [Course V - Containers]()

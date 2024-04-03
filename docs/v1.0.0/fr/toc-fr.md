@@ -7,7 +7,7 @@
 0. [Préface](/docs/v1.0.0/fr/preface-fr.md)
 1. [Hello world](/docs/v1.0.0/fr/hello-world-fr.md)
 2. [Cours I - Variables](/docs/v1.0.0/fr/course-1-variables-fr.md)
-3. [Cours II - Données et Énumérations]()
+3. [Cours II - Données et Énumérations](/docs/v1.0.0/fr/course-2-data-and-enums-fr.md)
 4. [Cours III - Boucles]()
 5. [Cours IV - Fonctions]()
 6. [Cours V - Conteneurs]()
