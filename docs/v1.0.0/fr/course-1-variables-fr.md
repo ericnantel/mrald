@@ -362,64 +362,23 @@ Voici des tableaux plus approfondis sur les types primitifs:
 | --------- | ------------- | --------- | ----- | ----- | --------- | --------------------- |
 |   boolean |   Binaire     |   Non     |   32  |   4   |   false   |   true, false         |
 
-Le language Mrald permet la création de nouveaux types, ainsi que la surcharge de la plupart des opérateurs.
+Le language Mrald permet la création de nouveaux types, ainsi que la surcharge de certains opérateurs.
 Ces types sont dits personnalisés, puisque ce sont les usagers qui les créer.
 Les types personnalisés sont séparés en trois catégories:
 - Les types de données
 - Les types d'énumérations
 - Les types de classes
 
-TOCOMPLETE..
+Nous verrons plus en détail, dans le prochain cours, comment déclarer les types de données et les énumérations.
+
+:star: Point très important à retenir:
+- Les types, primitifs ou personnalisés, peuvent être utilisé par des variables.
 
 ---
 :school: *Veuillez compléter les exercices 21 à 25.*
 
 ---
 
-
-Jusqu'à présent nous avons vu trois types de variable:
-- 'int'
-- 'float'
-- 'boolean'
-
-Et les opérateurs suivants:
-- '+, -, *, /'
-- '+=, -=, *=, /='
-- '==, !, !='
-- 'as'
-
-Ces types sont dits 'primitifs'. C'est-à-dire que ceux-ci sont définis par défaut par le language Mrald, ainsi que leurs opérations arithmétiques et/ou binaires. Nous allons voir qu'il existe une autre catégorie de type de variable: les types **personnalisés** ainsi que les **surcharges d'opérateurs**.
-
-Le language Mrald catégorise les types de variable en deux catégories:
-- Les types primitifs
-- Les types personnalisés
-
-Les opérateurs toutefois utilisent les mêmes 'symboles', mais il est possible de les 'surcharger' pour 'personnaliser' une opération arithmétique ou binaire sur un type en particulier.
-
-:star: Points très importants à retenir:
-- Une surcharge d'opérateur ne peut pas effacer une définition existante.
-- L'opérateur de conversion 'as' ne peut pas être surchargé, sauf par le compilateur.
-
-Dans le language Mrald, toute variable possède les propriétés fondamentales suivantes:
-- Un type
-- Un nom ou alias
-- Une information
-- Une durée de vie
-- Une mutabilité
-- Un identifiant
-- Une nature
-- Une adresse
-
-Nous verrons plus en détail les types de variables, ainsi que les autres propriétés fondamentales des variables.
-
-#### 1.0.1. Le type d'une variable
-Le type restreint la variable à ce qu'elle peut contenir comme information.
-
-Il est impossible de changer le type d'une variable une fois déclarée.
-
-Il existe 2 catégories de type de variables:
-- Types primitifs
-- Types personnalisés
 
 ##### 1.0.1.1. Les types primitifs
 Les types primitifs aussi appelés 'types fondamentaux' sont spécifiés par le standard du language de programmation Mrald.
