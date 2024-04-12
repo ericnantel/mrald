@@ -9,7 +9,7 @@
     end
 ```
 
-[Précédent](/docs/v1.0.0/fr/preface-fr.md) | [Suivant]()
+[Précédent](/docs/v1.0.0/fr/preface-fr.md) | [Suivant](/docs/v1.0.0/fr/course-1-variables-fr.md)
 
 [Retour vers Table des Matières](/docs/v1.0.0/fr/toc-fr.md)
 [Haut](#1-hello-world)
