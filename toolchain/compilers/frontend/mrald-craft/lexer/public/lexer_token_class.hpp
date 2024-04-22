@@ -4,23 +4,23 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			enum class TokenClass
-			{
-				Unknown = 0,
-				Keyword,
-				Symbol,
-				Number,
-				NumberSign,
-				Word,
-				Link,
-				Comment
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            enum class TokenClass
+            {
+                Unknown = 0,
+                Keyword,
+                Symbol,
+                Number,
+                NumberSign,
+                Word,
+                Link,
+                Comment
+            };
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif

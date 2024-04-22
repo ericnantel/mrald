@@ -4,13 +4,14 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			using TokenLoc = unsigned;
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            using TokenLoc = unsigned;
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

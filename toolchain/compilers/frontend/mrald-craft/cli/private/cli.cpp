@@ -9,25 +9,26 @@ using std::cout;
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace CLI
-		{
-			void Start(const Args& args)
-			{
-				std::cout << "Started Mrald-Craft CLI..." << std::endl;
+    namespace Craft
+    {
+        namespace CLI
+        {
+            void Start(const Args& args)
+            {
+                std::cout << "Started Mrald-Craft CLI..." << std::endl;
 
-				if (args.Size() > 1)
-				{
-					const Tool tool = ParseTool(args);
-					StartToolMode(tool);
-				}
-				else
-				{
-					const User user = ParseUser(args);
-					StartUserMode(user);
-				}
-			}
-		}
-	};
-};
+                if (args.Size() > 1)
+                {
+                    const Tool tool = ParseTool(args);
+                    StartToolMode(tool);
+                }
+                else
+                {
+                    const User user = ParseUser(args);
+                    StartUserMode(user);
+                }
+            }
+        } //namespace CLI
+    }; //namespace Craft
+}; //namespace Mrald
+

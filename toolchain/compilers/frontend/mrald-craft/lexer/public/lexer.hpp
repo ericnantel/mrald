@@ -7,13 +7,14 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			void Load(LoadMode mode);
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            void Load(LoadMode mode);
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

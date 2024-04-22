@@ -4,10 +4,11 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		void Parse(int argc, char* argv[]);
-	};
-};
+    namespace Craft
+    {
+        void Parse(int argc, char* argv[]);
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

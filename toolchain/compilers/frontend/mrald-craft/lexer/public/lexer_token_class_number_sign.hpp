@@ -4,17 +4,17 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			enum class TokenClassNumberSign
-			{
-				Positive = 0,
-				Negative
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            enum class TokenClassNumberSign
+            {
+                Positive = 0,
+                Negative
+            };
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
