@@ -4,18 +4,19 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			enum class TokenClassLink
-			{
-				Unknown = 0,
-				Local,
-				Remote
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            enum class TokenClassLink
+            {
+                Unknown = 0,
+                Local,
+                Remote
+            };
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

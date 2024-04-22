@@ -4,13 +4,14 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			using TokenCol = unsigned;
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            using TokenCol = unsigned;
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

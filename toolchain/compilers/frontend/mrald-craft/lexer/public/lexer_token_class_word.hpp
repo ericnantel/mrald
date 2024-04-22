@@ -4,18 +4,19 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			enum class TokenClassWord
-			{
-				Unknown = 0,
-				AlphabetOnly,
-				AnyCharacters
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            enum class TokenClassWord
+            {
+                Unknown = 0,
+                AlphabetOnly,
+                AnyCharacters
+            };
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

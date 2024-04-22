@@ -3,17 +3,18 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace Lexer
-		{
-			enum class LoadMode
-			{
-				Scan = 0,
-				Parse
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace Lexer
+        {
+            enum class LoadMode
+            {
+                Scan = 0,
+                Parse
+            };
+        }; //namespace Lexer
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

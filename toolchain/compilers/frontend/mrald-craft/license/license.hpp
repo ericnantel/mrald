@@ -4,10 +4,11 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		void License();
-	};
-};
+    namespace Craft
+    {
+        void License();
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

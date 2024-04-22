@@ -10,23 +10,24 @@ using std::string_view;
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace CLI
-		{
-			struct Args : private std::vector<std::string_view>
-			{
-				using Super = std::vector<std::string_view>;
+    namespace Craft
+    {
+        namespace CLI
+        {
+            struct Args : private std::vector<std::string_view>
+            {
+                using Super = std::vector<std::string_view>;
 
-				Args() = delete;
-				explicit Args(int argc, char* argv[]);
+                Args() = delete;
+                explicit Args(int argc, char* argv[]);
 
-				size_t Size() const;
+                size_t Size() const;
 
-				const_reference At(size_t argi) const;
-			};
-		};
-	};
-};
+                const_reference At(size_t argi) const;
+            };
+        }; //namespace CLI
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

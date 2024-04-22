@@ -4,17 +4,18 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace CLI
-		{
-			enum class Lang
-			{
-				English = 0,
-				French
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace CLI
+        {
+            enum class Lang
+            {
+                English = 0,
+                French
+            };
+        }; //namespace CLI
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

@@ -2,31 +2,32 @@
 #ifndef MRALD_CRAFT_CLI_USER_HPP
 #define MRALD_CRAFT_CLI_USER_HPP
 
-#include "cli_lang.hpp"
-#include "cli_build.hpp"
 #include "cli_args.hpp"
+#include "cli_build.hpp"
+#include "cli_lang.hpp"
 
 #include <string>
 using std::string;
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace CLI
-		{
-			struct User
-			{
-				Lang lang;
-				Build build;
-				std::string filePath;
-			};
+    namespace Craft
+    {
+        namespace CLI
+        {
+            struct User
+            {
+                Lang lang;
+                Build build;
+                std::string filePath;
+            };
 
-			User ParseUser(const Args& args);
+            User ParseUser(const Args& args);
 
-			void StartUserMode(const User& user);
-		};
-	};
-};
+            void StartUserMode(const User& user);
+        }; //namespace CLI
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

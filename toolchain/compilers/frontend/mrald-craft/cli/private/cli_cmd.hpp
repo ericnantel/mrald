@@ -4,18 +4,19 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace CLI
-		{
-			enum class Cmd
-			{
-				Unknown = 0,
-				Build,
-				Lang
-			};
-		};
-	};
-};
+    namespace Craft
+    {
+        namespace CLI
+        {
+            enum class Cmd
+            {
+                Unknown = 0,
+                Build,
+                Lang
+            };
+        }; //namespace CLI
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+

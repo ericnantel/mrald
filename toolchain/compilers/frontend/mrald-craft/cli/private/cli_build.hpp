@@ -4,36 +4,37 @@
 
 namespace Mrald
 {
-	namespace Craft
-	{
-		namespace CLI
-		{
-			enum class BuildType
-			{
-				None = 0,
-				Project,
-				Plugin,
-				Module
-			};
+    namespace Craft
+    {
+        namespace CLI
+        {
+            enum class BuildType
+            {
+                None = 0,
+                Project,
+                Plugin,
+                Module
+            };
 
-			enum class BuildConfig
-			{
-				Development = 0,
-				Production
-			};
+            enum class BuildConfig
+            {
+                Development = 0,
+                Production
+            };
 
-			enum class Build
-			{
-				None = 0,
-				Project_Development,
-				Project_Production,
-				Plugin_Development,
-				Plugin_Production,
-				Module_Development,
-				Module_Production
-			};
-		};
-	};
-};
+            enum class Build
+            {
+                None = 0,
+                Project_Development,
+                Project_Production,
+                Plugin_Development,
+                Plugin_Production,
+                Module_Development,
+                Module_Production
+            };
+        }; //namespace CLI
+    }; //namespace Craft
+}; //namespace Mrald
 
 #endif
+
