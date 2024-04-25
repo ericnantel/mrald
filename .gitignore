@@ -37,3 +37,6 @@
 
 # Build folders
 **/build/
+
+# Cache folders
+**/.cache/
