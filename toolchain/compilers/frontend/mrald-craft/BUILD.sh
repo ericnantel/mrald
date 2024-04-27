@@ -82,6 +82,32 @@ cd ../..
 
 echo 
 echo +===============================+
+echo + Building Mrald-Craft Format.. +
+echo +===============================+
+echo 
+
+cd formatter
+mkdir -p build
+cd build
+cmake ..
+cmake --build . --config Debug
+
+echo 
+echo +===============================+
+echo + Testing Mrald-Craft Format..  +
+echo +===============================+
+echo 
+
+if [[ "$os" == 'Msys' ]]; then
+	./bin/Debug/mrald_craft_formatter.exe
+else
+	./bin/mrald_craft_formatter
+fi
+
+cd ../..
+
+echo 
+echo +===============================+
 echo + Mrald-Craft Build Done. +++++++
 echo +===============================+
 echo 
