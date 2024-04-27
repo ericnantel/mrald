@@ -10,10 +10,9 @@ namespace Mrald
     {
         namespace CLI
         {
-            void Start(const Args& args);
+            void StartCLI(const Args& args);
         }; //namespace CLI
     }; //namespace Craft
 }; //namespace Mrald
 
 #endif
-

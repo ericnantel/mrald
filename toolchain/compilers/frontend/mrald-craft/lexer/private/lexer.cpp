@@ -1,5 +1,6 @@
 
 #include "lexer.hpp"
+#include "license.hpp"
 
 #include <iostream>
 using std::cout;
@@ -10,13 +11,13 @@ namespace Mrald
     {
         namespace Lexer
         {
-            void Load(LoadMode mode)
+            void StartLexer(LoadMode mode)
             {
+                //You must join the license to all toolchain binaries
+                Mrald::Craft::License::StartLicense();
+
                 std::cout << "Started Mrald-Craft Lexer... mode " << (int)mode << std::endl;
-                //todo use filehandle and start tokenization
-                //depending on the mode; we are either in the scan or parse stage
             }
         }; //namespace Lexer
     }; //namespace Craft
 }; //namespace Mrald
-

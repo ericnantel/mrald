@@ -11,10 +11,9 @@ namespace Mrald
     {
         namespace Lexer
         {
-            void Load(LoadMode mode);
+            void StartLexer(LoadMode mode);
         }; //namespace Lexer
     }; //namespace Craft
 }; //namespace Mrald
 
 #endif
-

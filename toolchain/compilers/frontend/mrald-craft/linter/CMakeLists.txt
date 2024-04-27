@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(mrald_craft_scanner VERSION 1.0.0)
+project(mrald_craft_linter VERSION 1.0.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -57,13 +57,13 @@ add_library(lexer${LIBRARY_NAME_SUFFIX} STATIC
 )
 
 
-set(SCANNER_HEADER_FILES
-	scanner.hpp
+set(LINTER_HEADER_FILES
+	linter.hpp
 )
 
-set(SCANNER_SOURCE_FILES 
+set(LINTER_SOURCE_FILES 
 	main.cpp
-	scanner.cpp
+	linter.cpp
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
@@ -79,7 +79,7 @@ elseif (CMAKE_BUILD_TYPE MATCHES Production)
 	add_definitions(-DPRODUCTION=1)
 endif()
 
-add_executable(${PROJECT_NAME} ${SCANNER_SOURCE_FILES} ${SCANNER_HEADER_FILES})
+add_executable(${PROJECT_NAME} ${LINTER_SOURCE_FILES} ${LINTER_HEADER_FILES})
 
 set(STATIC_BINARIES
 	license${LIBRARY_NAME_SUFFIX}

@@ -9,12 +9,13 @@ namespace Mrald
         {
             enum class LoadMode
             {
-                Scan = 0,
-                Parse
+                Parsing = 0,
+                Indexing,
+                Linting,
+                Formatting
             };
         }; //namespace Lexer
     }; //namespace Craft
 }; //namespace Mrald
 
 #endif
-
