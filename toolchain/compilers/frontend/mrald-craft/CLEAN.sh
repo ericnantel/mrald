@@ -9,7 +9,7 @@ echo
 rm -rf ./cli/build
 rm -rf ./lexer/build
 rm -rf ./parser/build
-rm -rf ./scanner/build
+rm -rf ./linter/build
 
 echo
 echo +===============================+

@@ -56,11 +56,11 @@ cd ../..
 
 echo 
 echo +===============================+
-echo + Building Mrald-Craft Scanner..+
+echo + Building Mrald-Craft Linter.. +
 echo +===============================+
 echo 
 
-cd scanner
+cd linter
 mkdir -p build
 cd build
 cmake ..
@@ -68,14 +68,14 @@ cmake --build . --config Debug
 
 echo 
 echo +===============================+
-echo + Testing Mrald-Craft Scanner.. +
+echo + Testing Mrald-Craft Linter..  +
 echo +===============================+
 echo 
 
 if [[ "$os" == 'Msys' ]]; then
-	./bin/Debug/mrald_craft_scanner.exe
+	./bin/Debug/mrald_craft_linter.exe
 else
-	./bin/mrald_craft_scanner
+	./bin/mrald_craft_linter
 fi
 
 cd ../..

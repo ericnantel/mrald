@@ -1,5 +1,5 @@
 
-#include "parser.hpp"
+#include "linter.hpp"
 
 #include <iostream>
 using std::cout;
@@ -10,11 +10,11 @@ namespace Mrald
 {
     namespace Craft
     {
-        void Parse(int argc, char* argv[])
+        void Lint(int argc, char* argv[])
         {
-            std::cout << "Started Mrald-Craft Parser..." << std::endl;
+            std::cout << "Started Mrald-Craft Linter..." << std::endl;
 
-            Lexer::LoadMode mode = Lexer::LoadMode::Parsing;
+            Lexer::LoadMode mode = Lexer::LoadMode::Linting;
             Lexer::Load(mode);
         }
     }; //namespace Craft
