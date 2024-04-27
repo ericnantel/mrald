@@ -10,12 +10,15 @@ namespace Mrald
 {
     namespace Craft
     {
-        void Lint(int argc, char* argv[])
+        namespace Linter
         {
-            std::cout << "Started Mrald-Craft Linter..." << std::endl;
+            void StartLinter(int argc, char* argv[])
+            {
+                std::cout << "Started Mrald-Craft Linter..." << std::endl;
 
-            Lexer::LoadMode mode = Lexer::LoadMode::Linting;
-            Lexer::Load(mode);
-        }
+                Lexer::LoadMode mode = Lexer::LoadMode::Linting;
+                Lexer::StartLexer(mode);
+            }
+        }; //namespace Linter
     }; //namespace Craft
 }; //namespace Mrald

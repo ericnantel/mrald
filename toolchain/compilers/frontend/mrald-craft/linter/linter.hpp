@@ -6,7 +6,10 @@ namespace Mrald
 {
     namespace Craft
     {
-        void Lint(int argc, char* argv[]);
+        namespace Linter
+        {
+            void StartLinter(int argc, char* argv[]);
+        }; //namespace Linter
     }; //namespace Craft
 }; //namespace Mrald
 

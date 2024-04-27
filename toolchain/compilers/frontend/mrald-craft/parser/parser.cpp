@@ -10,12 +10,15 @@ namespace Mrald
 {
     namespace Craft
     {
-        void Parse(int argc, char* argv[])
+        namespace Parser
         {
-            std::cout << "Started Mrald-Craft Parser..." << std::endl;
+            void StartParser(int argc, char* argv[])
+            {
+                std::cout << "Started Mrald-Craft Parser..." << std::endl;
 
-            Lexer::LoadMode mode = Lexer::LoadMode::Parsing;
-            Lexer::Load(mode);
-        }
+                Lexer::LoadMode mode = Lexer::LoadMode::Parsing;
+                Lexer::StartLexer(mode);
+            }
+        }; //namespace Parser
     }; //namespace Craft
 }; //namespace Mrald

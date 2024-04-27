@@ -13,7 +13,7 @@ namespace Mrald
     {
         namespace CLI
         {
-            void Start(const Args& args)
+            void StartCLI(const Args& args)
             {
                 std::cout << "Started Mrald-Craft CLI..." << std::endl;
 
@@ -31,4 +31,3 @@ namespace Mrald
         } //namespace CLI
     }; //namespace Craft
 }; //namespace Mrald
-

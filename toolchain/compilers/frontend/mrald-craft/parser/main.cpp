@@ -4,10 +4,10 @@
 
 int main(int argc, char* argv[])
 {
-    //You must join the license to all toolchain executables
+    //You must join the license to all toolchain binaries
     Mrald::Craft::License();
 
     //Starting parser
-    Mrald::Craft::Parse(argc, argv);
+    Mrald::Craft::Parser::StartParser(argc, argv);
     return 0;
 }
