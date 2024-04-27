@@ -6,7 +6,7 @@
 int main(int argc, char* argv[])
 {
     //You must join the license to all toolchain binaries
-    Mrald::Craft::License();
+    Mrald::Craft::License::StartLicense();
 
     //Collecting args
     Mrald::Craft::CLI::Args args(argc, argv);

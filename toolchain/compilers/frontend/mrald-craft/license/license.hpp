@@ -6,9 +6,11 @@ namespace Mrald
 {
     namespace Craft
     {
-        void License();
+        namespace License
+        {
+            void StartLicense();
+        }; //namespace License
     }; //namespace Craft
 }; //namespace Mrald
 
 #endif
-
