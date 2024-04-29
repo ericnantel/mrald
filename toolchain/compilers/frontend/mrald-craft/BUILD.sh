@@ -4,6 +4,34 @@ os=$(uname -o)
 
 echo 
 echo +===============================+
+echo + Building Mrald-Craft License..+
+echo +===============================+
+echo 
+
+cd license
+mkdir -p build
+cd build
+cmake ..
+cmake --build . --config Debug
+
+cd ../..
+
+echo 
+echo +===============================+
+echo + Building Mrald-Craft Lexer.. ++
+echo +===============================+
+echo 
+
+cd lexer
+mkdir -p build
+cd build
+cmake ..
+cmake --build . --config Debug
+
+cd ../..
+
+echo 
+echo +===============================+
 echo + Building Mrald-Craft CLI.. ++++
 echo +===============================+
 echo 
@@ -21,9 +49,9 @@ echo +===============================+
 echo 
 
 if [[ "$os" == 'Msys' ]]; then
-	./bin/Debug/mrald_craft_cli.exe
+	./bin/Debug/cli.exe
 else
-	./bin/mrald_craft_cli
+	./bin/cli
 fi
 
 cd ../..
@@ -47,9 +75,9 @@ echo +===============================+
 echo 
 
 if [[ "$os" == 'Msys' ]]; then
-	./bin/Debug/mrald_craft_parser.exe
+	./bin/Debug/parser.exe
 else
-	./bin/mrald_craft_parser
+	./bin/parser
 fi
 
 cd ../..
@@ -73,9 +101,9 @@ echo +===============================+
 echo 
 
 if [[ "$os" == 'Msys' ]]; then
-	./bin/Debug/mrald_craft_linter.exe
+	./bin/Debug/linter.exe
 else
-	./bin/mrald_craft_linter
+	./bin/linter
 fi
 
 cd ../..
@@ -99,9 +127,9 @@ echo +===============================+
 echo 
 
 if [[ "$os" == 'Msys' ]]; then
-	./bin/Debug/mrald_craft_formatter.exe
+	./bin/Debug/formatter.exe
 else
-	./bin/mrald_craft_formatter
+	./bin/formatter
 fi
 
 cd ../..
