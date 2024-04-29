@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.25)
-project(cli
+project(license
 	VERSION 1.0.0
 	LANGUAGES CXX
-	DESCRIPTION "Mrald-Craft CLI Application")
+	DESCRIPTION "Mrald-Craft License Library")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -18,31 +18,17 @@ include_directories(
 )
 
 set(PUBLIC_HEADER_FILES
-	public/cli.hpp
+	public/license.hpp
 )
 
 set(PRIVATE_HEADER_FILES
-	private/cli_args.hpp
-	private/cli_build.hpp
-	private/cli_cmd.hpp
-	private/cli_lang.hpp
-	private/cli_tool.hpp
-	private/cli_user.hpp
 )
 
 set(PRIVATE_SOURCE_FILES
-	private/cli.cpp
-	private/cli_args.cpp
-	private/cli_tool.cpp
-	private/cli_user.cpp
+	private/license.cpp
 )
 
-set(MAIN_SOURCE_FILE
-	main.cpp
-)
-
-add_executable(${PROJECT_NAME}
-	${MAIN_SOURCE_FILE}
+add_library(${PROJECT_NAME} STATIC
 	${PUBLIC_HEADER_FILES}
 	${PRIVATE_HEADER_FILES}
 	${PRIVATE_SOURCE_FILES}
@@ -52,27 +38,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 	CXX_STANDARD 17
 	CXX_EXTENSIONS OFF
 	#DEBUG_POSTFIX "d"
-	#PUBLIC_HEADER "${PUBLIC_HEADER_FILES}"
+	PUBLIC_HEADER "${PUBLIC_HEADER_FILES}"
 )
-
-target_include_directories(${PROJECT_NAME}
-	PRIVATE
-		../license/public
-)
-
-if(WIN32)
-	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
-		NAMES license.lib
-		HINTS ../license/build/lib/Debug
-	)
-else()
-	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
-		NAMES liblicense.a
-		HINTS ../license/build/lib
-	)
-endif()
 
 target_link_libraries(${PROJECT_NAME}
-	PRIVATE
-		${LICENSE_STATIC_EXTERNAL_LIBRARY}
 )
+
