@@ -48,7 +48,7 @@ echo + Testing Mrald-Craft CLI.. +++++
 echo +===============================+
 echo 
 
-if [[ "$os" == 'Msys' ]]; then
+if [ "$os" = 'Msys' ]; then
 	./bin/Debug/cli.exe
 else
 	./bin/cli
@@ -74,7 +74,7 @@ echo + Testing Mrald-Craft Parser.. ++
 echo +===============================+
 echo 
 
-if [[ "$os" == 'Msys' ]]; then
+if [ "$os" = 'Msys' ]; then
 	./bin/Debug/parser.exe
 else
 	./bin/parser
@@ -100,7 +100,7 @@ echo + Testing Mrald-Craft Linter..  +
 echo +===============================+
 echo 
 
-if [[ "$os" == 'Msys' ]]; then
+if [ "$os" = 'Msys' ]; then
 	./bin/Debug/linter.exe
 else
 	./bin/linter
@@ -126,7 +126,7 @@ echo + Testing Mrald-Craft Format..  +
 echo +===============================+
 echo 
 
-if [[ "$os" == 'Msys' ]]; then
+if [ "$os" = 'Msys' ]; then
 	./bin/Debug/formatter.exe
 else
 	./bin/formatter
