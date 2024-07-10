@@ -58,6 +58,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_include_directories(${PROJECT_NAME}
 	PRIVATE
 		../license/public
+		../standard/public
 )
 
 if(WIN32)
@@ -65,14 +66,23 @@ if(WIN32)
 		NAMES license.lib
 		HINTS ../license/build/lib/Debug
 	)
+	find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+		NAMES standard.lib
+		HINTS ../standard/build/lib/Debug
+	)
 else()
 	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
 		NAMES liblicense.a
 		HINTS ../license/build/lib
+	)
+	find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+		NAMES libstandard.a
+		HINTS ../standard/build/lib
 	)
 endif()
 
 target_link_libraries(${PROJECT_NAME}
 	PRIVATE
 		${LICENSE_STATIC_EXTERNAL_LIBRARY}
+		${STANDARD_STATIC_EXTERNAL_LIBRARY}
 )

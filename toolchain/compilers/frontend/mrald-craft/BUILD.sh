@@ -18,6 +18,20 @@ cd ../..
 
 echo 
 echo +===============================+
+echo + Building Mrald-Craft Standard..+
+echo +===============================+
+echo 
+
+cd standard
+mkdir -p build
+cd build
+cmake ..
+cmake --build . --config Debug
+
+cd ../..
+
+echo 
+echo +===============================+
 echo + Building Mrald-Craft Lexer.. ++
 echo +===============================+
 echo 

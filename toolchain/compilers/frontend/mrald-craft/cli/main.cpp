@@ -1,7 +1,7 @@
 
+#include "license.hpp"
 #include "cli.hpp"
 #include "cli_args.hpp"
-#include "license.hpp"
 
 int main(int argc, char* argv[])
 {

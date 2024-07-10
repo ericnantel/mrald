@@ -49,6 +49,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_include_directories(${PROJECT_NAME}
 	PRIVATE
 		../license/public
+		../standard/public
 		../lexer/public
 )
 
@@ -56,6 +57,10 @@ if(WIN32)
 	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
 		NAMES license.lib
 		HINTS ../license/build/lib/Debug
+	)
+	find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+		NAMES standard.lib
+		HINTS ../standard/build/lib/Debug
 	)
 	find_library(LEXER_STATIC_EXTERNAL_LIBRARY
 		NAMES lexer.lib
@@ -66,6 +71,10 @@ else()
 		NAMES liblicense.a
 		HINTS ../license/build/lib
 	)
+	find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+		NAMES libstandard.a
+		HINTS ../standard/build/lib
+	)
 	find_library(LEXER_STATIC_EXTERNAL_LIBRARY
 		NAMES liblexer.a
 		HINTS ../lexer/build/lib
@@ -75,5 +84,6 @@ endif()
 target_link_libraries(${PROJECT_NAME}
 	PRIVATE
 		${LICENSE_STATIC_EXTERNAL_LIBRARY}
+		${STANDARD_STATIC_EXTERNAL_LIBRARY}
 		${LEXER_STATIC_EXTERNAL_LIBRARY}
 )

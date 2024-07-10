@@ -7,6 +7,7 @@ echo +===============================+
 echo
 
 rm -rf ./license/build
+rm -rf ./standard/build
 rm -rf ./lexer/build
 
 rm -rf ./cli/build

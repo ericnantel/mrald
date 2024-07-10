@@ -1,6 +1,6 @@
 
-#include "formatter.hpp"
 #include "license.hpp"
+#include "formatter.hpp"
 
 int main(int argc, char* argv[])
 {
