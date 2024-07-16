@@ -12,6 +12,14 @@ namespace Mrald
 
             void GetCodename(char (&codename)[64]);
 
+            //
+            //..................................|===Integral
+            //..........|===Primitive===========|===Floating
+            //Group=====|.......................|===Binary
+            //..........|===Custom=====|===Data
+            //.........................|===Enum
+            //.........................|===Class
+            //
             enum class MetaGroupType
             {
                 Primitive = 0,
@@ -53,6 +61,108 @@ namespace Mrald
                 F64,
                 Boolean
             };
+
+            namespace MetaBuiltinTypes
+            {
+                namespace Int8
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = true;
+                    constexpr unsigned Size = 1U;
+                    constexpr signed DefaultValue = 0;
+                    constexpr signed char MinValue = -128;
+                    constexpr signed char MaxValue = +127;
+                }; //namespace Int8
+                namespace Char = Int8;
+
+                namespace Int16
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = true;
+                    constexpr unsigned Size = 2U;
+                    constexpr signed DefaultValue = 0;
+                    constexpr signed short MinValue = -32768;
+                    constexpr signed short MaxValue = +32767;
+                }; //namespace Int16
+                namespace Short = Int16;
+
+                namespace Int32
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = true;
+                    constexpr unsigned Size = 4U;
+                    constexpr signed DefaultValue = 0;
+                    constexpr signed int MinValue = -2147483648;
+                    constexpr signed int MaxValue = +2147483647;
+                }; //namespace Int32
+                namespace Int = Int32;
+
+                namespace Int64
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = true;
+                    constexpr unsigned Size = 8U;
+                    constexpr signed DefaultValue = 0;
+                    constexpr signed long MinValue = -9223372036854775807LL - 1LL;
+                    constexpr signed long MaxValue = +9223372036854775807LL;
+                }; //namespace Int64
+                namespace Long = Int64;
+
+                namespace Uint8
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = false;
+                    constexpr unsigned Size = 1U;
+                    constexpr unsigned DefaultValue = 0U;
+                    constexpr unsigned char MinValue = 0;
+                    constexpr unsigned char MaxValue = 255;
+                }; //namespace Uint8
+                namespace Uchar = Uint8;
+                namespace Byte = Uint8;
+
+                namespace Uint16
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = false;
+                    constexpr unsigned Size = 2U;
+                    constexpr unsigned DefaultValue = 0U;
+                    constexpr unsigned short MinValue = 0;
+                    constexpr unsigned short MaxValue = 65535;
+                }; //namespace Uint16
+                namespace Ushort = Uint16;
+
+                namespace Uint32
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = false;
+                    constexpr unsigned Size = 4U;
+                    constexpr unsigned DefaultValue = 0U;
+                    constexpr unsigned int MinValue = 0;
+                    constexpr unsigned int MaxValue = 4294967295;
+                }; //namespace Uint32
+                namespace Uint = Uint32;
+
+                namespace Uint64
+                {
+                    constexpr MetaGroupType Group = MetaGroupType::Primitive;
+                    constexpr MetaPrimitiveCategoryType Category = MetaPrimitiveCategoryType::Integral;
+                    constexpr bool Signed = false;
+                    constexpr unsigned Size = 8U;
+                    constexpr unsigned DefaultValue = 0U;
+                    constexpr unsigned long MinValue = 0;
+                    constexpr unsigned long MaxValue = 18446744073709551615UL;
+                }; //namespace Uint64
+                namespace Ulong = Uint64;
+
+                //TODO: Floating and Binary
+            }; //namespace MetaBuiltinTypes
 
             //Note: we might create string, vector, containers as builtin types
             //That way, we don't have to expose memory allocation to the user
