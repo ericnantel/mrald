@@ -62,14 +62,25 @@ target_include_directories(${PROJECT_NAME}
 )
 
 if(WIN32)
-	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
-		NAMES license.lib
-		HINTS ../license/build/lib/Debug
-	)
-	find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
-		NAMES standard.lib
-		HINTS ../standard/build/lib/Debug
-	)
+	if (${CMAKE_GENERATOR} MATCHES "Ninja")
+		find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
+			NAMES license.lib
+			HINTS ../license/build/lib
+		)
+		find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+			NAMES standard.lib
+			HINTS ../standard/build/lib
+		)
+	else()
+		find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
+			NAMES license.lib
+			HINTS ../license/build/lib/Debug
+		)
+		find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+			NAMES standard.lib
+			HINTS ../standard/build/lib/Debug
+		)
+	endif()
 else()
 	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
 		NAMES liblicense.a
