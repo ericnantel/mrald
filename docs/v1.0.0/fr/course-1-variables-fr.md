@@ -221,7 +221,7 @@ Voyons comment savoir si deux 'opérandes' sont identiques ou différentes.
 ---
 ### 1.4. Négation
 
-L'opérateur de négation '-' returne un résultat intégral ou flottant signé.
+L'opérateur de négation '-' retourne un résultat intégral ou flottant signé.
 
 :book: Exemple 9.
 - Prenons une variable flottante u et utilisons l'opérateur de négation '-':
