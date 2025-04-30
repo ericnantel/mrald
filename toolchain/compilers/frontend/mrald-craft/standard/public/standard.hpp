@@ -172,6 +172,238 @@ namespace Mrald
                 namespace Bool = Boolean;
             }; //namespace MetaBuiltinTypes
 
+            namespace MetaBuiltinOperators
+            {
+                namespace Add
+                {
+                    //constexpr auto Symbol = '+'
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Add
+
+                namespace Subtract
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Subtract
+
+                namespace Multiply
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Multiply
+
+                namespace Divide
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Divide
+
+                namespace AddEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace AddEqual
+
+                namespace SubtractEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace SubtractEqual
+
+                namespace MultiplyEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace MultiplyEqual
+
+                namespace DivideEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace DivideEqual
+
+                namespace Increment
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Increment
+
+                namespace Decrement
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Decrement
+
+                namespace EqualEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64,
+                        Boolean
+                    };
+                }; //namespace EqualEqual
+
+                namespace NotEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64,
+                        Boolean
+                    };
+                }; //namespace NotEqual
+
+                namespace Negate
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        F32,
+                        F64
+                    };
+                }; //namespace Negate
+
+                namespace Inverse
+                {
+                    enum class Types
+                    {
+                        Boolean
+                    };
+                }; //namespace Inverse
+
+            }; //namespace MetaBuiltinOperators
+
             //Note: we might create string, vector, containers as builtin types
             //That way, we don't have to expose memory allocation to the user
             //..
@@ -190,4 +422,3 @@ namespace Mrald
 }; //namespace Mrald
 
 #endif
-

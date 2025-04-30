@@ -219,30 +219,41 @@ Voyons comment savoir si deux 'opérandes' sont identiques ou différentes.
         boolean different = a != b
     ```
 ---
-### 1.4. Inversion
+### 1.4. Négation
+
+L'opérateur de négation '-' returne un résultat intégral ou flottant signé.
+
+:book: Exemple 9.
+- Prenons une variable flottante u et utilisons l'opérateur de négation '-':
+    ```mrald
+        float u = 22.56
+        u = -u
+    ```
+---
+### 1.5. Inversion
 
 L'opérateur d'inversion '!' retourne un résultat binaire inverse.
 
-:book: Exemple 9.
+:book: Exemple 10.
 - Prenons une variable binaire f et utilisons l'opérateur d'inversion '!':
     ```mrald
         boolean f = true
         f = !f
     ```
 ---
-### 1.5. Déduction
+### 1.6. Déduction
 
 La déduction de type permet de combiner valeurs et variables dans les opérations.
 Le résultat des opérations doit avoir le même type que la variable à assigner.
 
 ---
-### 1.6. Conversion
+### 1.7. Conversion
 
 Jusqu'à présent nous avons vu les modifications et opérations de variables sans avoir eu recours à des conversions de type. Parfois nous avons besoin de 'changer de boîte'. Comme il n'est pas possible de changer le type d'une variable, il faudra convertir une information et copier le résultat dans une autre variable avec le type correspondant. Dans certains cas, cela peut causer des pertes de précision dans l'information.
 
 Vous devez utiliser l'opérateur de conversion '**as**' pour convertir un type en un autre.
 
-:book: Exemple 10.
+:book: Exemple 11.
 - Convertir la variable taille en entier:
     ```mrald
         float taille = 1.80
@@ -258,7 +269,7 @@ Dans l'exemple ci-haut, l'opérateur 'as' va convertir l'information 'flottante'
 :school: *Veuillez compléter les exercices 11 à 20.*
 
 ---
-### 1.7. Primitifs vs Personnalisés
+### 1.8. Primitifs vs Personnalisés
 
 Nous avons déjà vu trois types de variables:
 - 'int' est un type primitif intégral signé
