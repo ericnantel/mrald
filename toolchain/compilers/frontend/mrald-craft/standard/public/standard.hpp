@@ -345,6 +345,74 @@ namespace Mrald
                     };
                 }; //namespace Decrement
 
+                namespace LessThan
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace LessThan
+
+                namespace GreaterThan
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace GreaterThan
+
+                namespace LessThanEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace LessThanEqual
+
+                namespace GreaterThanEqual
+                {
+                    enum class Types
+                    {
+                        Int8,
+                        Int16,
+                        Int32,
+                        Int64,
+                        Uint8,
+                        Uint16,
+                        Uint32,
+                        Uint64,
+                        F32,
+                        F64
+                    };
+                }; //namespace GreaterThanEqual
+
                 namespace EqualEqual
                 {
                     enum class Types

@@ -199,7 +199,7 @@ Nous aurions pu écrire l'exemple ci-haut de la manière suivante:
     ```
 
 :star: Point très important à retenir:
-- Ces opérateurs '++, --' sont limités à certains types de variable.
+- Ces opérateurs '++', '--' sont limités à certains types de variable.
 
 ---
 :school: *Veuillez compléter les exercices 1 à 10.*
@@ -207,7 +207,7 @@ Nous aurions pu écrire l'exemple ci-haut de la manière suivante:
 ---
 ### 1.4. Comparaison
 
-Les opérateurs de comparaison '==' et non-comparaison '!=' utilisent deux valeurs et/ou variables, de même type, et retourne un résultat binaire.
+Les opérateurs de comparaison '==', '!=', '<', '<=', '>', '>=' utilisent deux valeurs et/ou variables, de même type, et retourne un résultat binaire.
 
 Voyons comment savoir si deux 'opérandes' sont identiques ou différentes.
 :book: Exemple 8.
@@ -218,6 +218,10 @@ Voyons comment savoir si deux 'opérandes' sont identiques ou différentes.
         boolean identique = a == b
         boolean different = a != b
     ```
+
+:star: Point très important à retenir:
+- Les opérateurs '<', '<=', '>', '>=' ne peuvent pas exister pour des valeurs et/ou variables 'binaire', puisque non-quantifiable.
+
 ---
 ### 1.4. Négation
 
