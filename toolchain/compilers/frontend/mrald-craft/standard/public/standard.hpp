@@ -194,6 +194,7 @@ namespace Mrald
 
                 namespace Subtract
                 {
+                    //constexpr auto Symbol = '-'
                     enum class Types
                     {
                         Int8,
@@ -211,6 +212,7 @@ namespace Mrald
 
                 namespace Multiply
                 {
+                    //constexpr auto Symbol = '*'
                     enum class Types
                     {
                         Int8,
@@ -228,6 +230,7 @@ namespace Mrald
 
                 namespace Divide
                 {
+                    //constexpr auto Symbol = '/'
                     enum class Types
                     {
                         Int8,
@@ -245,6 +248,7 @@ namespace Mrald
 
                 namespace AddEqual
                 {
+                    //constexpr auto Symbol = '+='
                     enum class Types
                     {
                         Int8,
@@ -262,6 +266,7 @@ namespace Mrald
 
                 namespace SubtractEqual
                 {
+                    //constexpr auto Symbol = '-='
                     enum class Types
                     {
                         Int8,
@@ -279,6 +284,7 @@ namespace Mrald
 
                 namespace MultiplyEqual
                 {
+                    //constexpr auto Symbol = '*='
                     enum class Types
                     {
                         Int8,
@@ -296,6 +302,7 @@ namespace Mrald
 
                 namespace DivideEqual
                 {
+                    //constexpr auto Symbol = '/='
                     enum class Types
                     {
                         Int8,
@@ -313,6 +320,7 @@ namespace Mrald
 
                 namespace Increment
                 {
+                    //constexpr auto Symbol = '++'
                     enum class Types
                     {
                         Int8,
@@ -330,6 +338,7 @@ namespace Mrald
 
                 namespace Decrement
                 {
+                    //constexpr auto Symbol = '--'
                     enum class Types
                     {
                         Int8,
@@ -347,6 +356,7 @@ namespace Mrald
 
                 namespace LessThan
                 {
+                    //constexpr auto Symbol = '<'
                     enum class Types
                     {
                         Int8,
@@ -364,6 +374,7 @@ namespace Mrald
 
                 namespace GreaterThan
                 {
+                    //constexpr auto Symbol = '>'
                     enum class Types
                     {
                         Int8,
@@ -381,6 +392,7 @@ namespace Mrald
 
                 namespace LessThanEqual
                 {
+                    //constexpr auto Symbol = '<='
                     enum class Types
                     {
                         Int8,
@@ -398,6 +410,7 @@ namespace Mrald
 
                 namespace GreaterThanEqual
                 {
+                    //constexpr auto Symbol = '>='
                     enum class Types
                     {
                         Int8,
@@ -415,6 +428,7 @@ namespace Mrald
 
                 namespace EqualEqual
                 {
+                    //constexpr auto Symbol = '=='
                     enum class Types
                     {
                         Int8,
@@ -433,6 +447,7 @@ namespace Mrald
 
                 namespace NotEqual
                 {
+                    //constexpr auto Symbol = '!='
                     enum class Types
                     {
                         Int8,
@@ -451,6 +466,7 @@ namespace Mrald
 
                 namespace Negate
                 {
+                    //constexpr auto Symbol = '-'
                     enum class Types
                     {
                         Int8,
@@ -464,6 +480,7 @@ namespace Mrald
 
                 namespace Inverse
                 {
+                    //constexpr auto Symbol = '!'
                     enum class Types
                     {
                         Boolean
