@@ -495,7 +495,7 @@ namespace Mrald
 
             //TODO: Builtin Primitive Types [X]
             //TODO: Builtin Custom Types []
-            //TODO: Builtin Primitive Operators []
+            //TODO: Builtin Primitive Operators [X]
             //TODO: Builtin Custom Operators []
 
             //TODO: Struct VariableDeclaration::Identifier
