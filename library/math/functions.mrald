@@ -1,0 +1,16 @@
+
+; Functions
+
+export func min
+params float a, float b
+output float o
+	o = a < b ? a : b
+end
+
+export func max
+params float a, float b
+output float o
+	o = a > b ? a : b
+end
+
+; TODO: sqrt, pow, etc.

@@ -1,0 +1,27 @@
+
+; Imports
+; -----
+
+import vec3
+
+; Data
+; -----
+
+export data ray3
+	vec3 origin
+	vec3 direction
+end
+
+; Operators
+; -----
+
+; Functions
+; -----
+
+export func get_point
+params ray3 r, float s
+output vec3 o
+	o.x = r.origin.x + r.direction.x * s
+	o.y = r.origin.y + r.direction.y * s
+	o.z = r.origin.z + r.direction.z * s
+end
