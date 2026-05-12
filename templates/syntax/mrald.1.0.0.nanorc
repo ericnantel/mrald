@@ -1,0 +1,49 @@
+
+## Nano Syntax Highlight Template For Mrald Version 1.0.0 (Codename: Quarks)
+## Copyright 2024 Eric Nantel
+
+syntax "mrald" "\.mrald$"
+
+## Comments
+color brightgreen ";.*$"
+
+## Primitives
+color brightblue "char|byte|short|ushort|int|uint|long|ulong|boolean|float|double"
+
+## More Primitives
+color brightcyan "int8|uint8|int16|uint16|int32|uint32|int64|uint64|f32|f64"
+
+## Experimental Primitives
+color brightcyan "half|f16"
+
+## Imports
+color magenta "import"
+
+## Exports
+color brightmagenta "export"
+
+## Casts
+color brightmagenta "as"
+
+## Params
+color red "param|readonly|copy"
+
+## Keywords
+color red "return|continue|break"
+
+## Experimental Keywords
+color brightred "when"
+
+## Strings
+color brightred "['][^']*\\[']"
+color brightred "["][^"]*\\["]"
+
+## Parents
+color green "parent"
+
+## Declaration Scopes
+color brightyellow "main|enum|data|class|func|if|else|switch|case|for|while"
+
+## End Scope
+color brightyellow "end"
+

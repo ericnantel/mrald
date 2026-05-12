@@ -1,0 +1,74 @@
+
+; Imports
+; -----
+
+import functions
+
+; Data
+; -----
+
+export data vec3
+	float x
+	float y
+	float z
+end
+
+; Operators
+; -----
+
+export operator *
+params vec3 v, float s
+output vec3 o
+	o.x = v.x * s
+	o.y = v.y * s
+	o.z = v.z * s
+end
+
+export operator +
+params vec3 v1, vec3 v2
+output vec3 o
+	o.x = v1.x + v2.x
+	o.y = v1.y + v2.y
+	o.z = v1.z + v2.z
+end
+
+export operator -
+params vec3 v1, vec3 v2
+output vec3 o
+	o.x = v1.x - v2.x
+	o.y = v1.y - v2.y
+	o.z = v1.z - v2.z
+end
+
+; Functions
+; -----
+
+export func dot_product
+params vec3 v1, vec3 v2
+output float o
+	o = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
+end
+
+export func cross_product
+params vec3 v1, vec3 v2
+output vec3 o
+	o.x = v1.y * v2.z - v1.z * v2.y
+	o.y = v1.z * v2.x - v1.x * v2.z
+	o.z = v1.x * v2.y - v1.y * v2.x
+end
+
+export func min
+params vec3 v1, vec2 v2
+output vec3 o
+	o.x = min v1.x, v2.x
+	o.y = min v1.y, v2.y
+	o.z = min v1.z, v2.z
+end
+
+export func max
+params vec3 v1, vec2 v2
+output vec3 o
+	o.x = max v1.x, v2.x
+	o.y = max v1.y, v2.y
+	o.z = max v1.z, v2.z
+end

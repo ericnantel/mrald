@@ -1,0 +1,99 @@
+cmake_minimum_required(VERSION 3.25)
+project(cli
+	VERSION 1.0.0
+	LANGUAGES CXX
+	DESCRIPTION "Mrald-Craft CLI Application")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+include_directories(
+	public
+	private
+)
+
+set(PUBLIC_HEADER_FILES
+	public/cli.hpp
+)
+
+set(PRIVATE_HEADER_FILES
+	private/cli_args.hpp
+	private/cli_build.hpp
+	private/cli_cmd.hpp
+	private/cli_lang.hpp
+	private/cli_tool.hpp
+	private/cli_user.hpp
+)
+
+set(PRIVATE_SOURCE_FILES
+	private/cli.cpp
+	private/cli_args.cpp
+	private/cli_tool.cpp
+	private/cli_user.cpp
+)
+
+set(MAIN_SOURCE_FILE
+	main.cpp
+)
+
+add_executable(${PROJECT_NAME}
+	${MAIN_SOURCE_FILE}
+	${PUBLIC_HEADER_FILES}
+	${PRIVATE_HEADER_FILES}
+	${PRIVATE_SOURCE_FILES}
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+	CXX_STANDARD 17
+	CXX_EXTENSIONS OFF
+	#DEBUG_POSTFIX "d"
+	#PUBLIC_HEADER "${PUBLIC_HEADER_FILES}"
+)
+
+target_include_directories(${PROJECT_NAME}
+	PRIVATE
+		../license/public
+		../standard/public
+)
+
+if(WIN32)
+	if (${CMAKE_GENERATOR} MATCHES "Ninja")
+		find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
+			NAMES license.lib
+			HINTS ../license/build/lib
+		)
+		find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+			NAMES standard.lib
+			HINTS ../standard/build/lib
+		)
+	else()
+		find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
+			NAMES license.lib
+			HINTS ../license/build/lib/Debug
+		)
+		find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+			NAMES standard.lib
+			HINTS ../standard/build/lib/Debug
+		)
+	endif()
+else()
+	find_library(LICENSE_STATIC_EXTERNAL_LIBRARY
+		NAMES liblicense.a
+		HINTS ../license/build/lib
+	)
+	find_library(STANDARD_STATIC_EXTERNAL_LIBRARY
+		NAMES libstandard.a
+		HINTS ../standard/build/lib
+	)
+endif()
+
+target_link_libraries(${PROJECT_NAME}
+	PRIVATE
+		${LICENSE_STATIC_EXTERNAL_LIBRARY}
+		${STANDARD_STATIC_EXTERNAL_LIBRARY}
+)
